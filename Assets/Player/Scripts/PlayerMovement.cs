@@ -25,5 +25,12 @@ public class PlayerMovement : MonoBehaviour
         newPosition.z = Mathf.Clamp(newPosition.z, Clamp.Instance.minZ, Clamp.Instance.maxZ);
 
         rb.MovePosition(newPosition);
+
+        // Rotate the object towards the direction of movement
+        if (movement != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(movement);
+            rb.MoveRotation(targetRotation);
+        }
     }
 }
