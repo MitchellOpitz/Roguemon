@@ -2032,6 +2032,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3583758052098288623, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
+      propertyPath: totalWaves
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 3583758052098288623, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1397112622}
