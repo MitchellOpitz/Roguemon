@@ -6,11 +6,11 @@ public class TestDamage : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        Debug.Log("OnTriggerEnter called!");
+        //Debug.Log("OnTriggerEnter called!");
         // Check if the collider belongs to an enemy
         if (other.CompareTag("Enemy"))
         {
-            Debug.Log("Player touched an enemy!");
+            //Debug.Log("Player touched an enemy!");
             // Get the enemy's health component
             Enemy enemyHealth = other.GetComponent<Enemy>();
 

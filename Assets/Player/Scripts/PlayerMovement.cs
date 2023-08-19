@@ -6,11 +6,6 @@ public class PlayerMovement : MonoBehaviour
 
     private Rigidbody rb;
 
-    public float minX = -18f;
-    public float maxX = 9f;
-    public float minZ = -11f;
-    public float maxZ = 7f;
-
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -26,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPosition = rb.position + movement;
 
         // Clamp the new position within the specified bounds
-        newPosition.x = Mathf.Clamp(newPosition.x, minX, maxX);
-        newPosition.z = Mathf.Clamp(newPosition.z, minZ, maxZ);
+        newPosition.x = Mathf.Clamp(newPosition.x, Clamp.Instance.minX, Clamp.Instance.maxX);
+        newPosition.z = Mathf.Clamp(newPosition.z, Clamp.Instance.minZ, Clamp.Instance.maxZ);
 
         rb.MovePosition(newPosition);
     }

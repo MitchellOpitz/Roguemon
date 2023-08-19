@@ -48,7 +48,7 @@ public class WaveManager : MonoBehaviour
             WaveConfiguration waveConfig = waves[waveIndex];
             for (int i = 0; i < waveConfig.enemyCount; i++)
             {
-                Vector3 spawnPosition = new Vector3 (-14f, 0.125f, 4f);
+                Vector3 spawnPosition = GetRandomSpawnPosition();
                 enemySpawner.SpawnEnemy(waveConfig.enemyTypePrefab, spawnPosition);
             }
         }
@@ -58,5 +58,13 @@ public class WaveManager : MonoBehaviour
     {
         //Debug.Log("Wave clear method called.");
         isWaveActive = false;
+    }
+
+    private Vector3 GetRandomSpawnPosition()
+    {
+        float randomX = Random.Range(Clamp.Instance.minX, Clamp.Instance.maxX);
+        float randomZ = Random.Range(Clamp.Instance.minZ, Clamp.Instance.maxZ);
+
+        return new Vector3(randomX, 0.125f, randomZ);
     }
 }
