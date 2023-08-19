@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 36007183500865978}
   - component: {fileID: 2295816593163404456}
   - component: {fileID: 7426874169116348492}
+  - component: {fileID: -5386957343421392080}
   m_Layer: 0
   m_Name: TestEnemy1
   m_TagString: Enemy
@@ -121,3 +122,15 @@ MonoBehaviour:
   health: 100
   moveSpeed: 3
   type: Enemy type 1
+--- !u!114 &-5386957343421392080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9131799187819911134}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2608bbb723cf10a4285e4441471910ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
