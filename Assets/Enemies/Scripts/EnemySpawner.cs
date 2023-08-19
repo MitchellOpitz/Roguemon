@@ -3,8 +3,6 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour
 {
     public WaveManager waveManager;
-    public GameObject enemyTypeAPrefab;
-    public GameObject enemyTypeBPrefab;
 
     private int enemiesRemaining;
     // ...
@@ -13,13 +11,13 @@ public class EnemySpawner : MonoBehaviour
     {
         Instantiate(enemyPrefab, spawnPosition, Quaternion.identity);
         enemiesRemaining++;
-        Debug.Log("Enemies remaining: " + enemiesRemaining);
+        //Debug.Log("Enemies remaining: " + enemiesRemaining);
     }
 
     public void EnemyDefeated()
     {
         enemiesRemaining--;
-        Debug.Log("Enemies remaining: " + enemiesRemaining);
+        //Debug.Log("Enemies remaining: " + enemiesRemaining);
 
         if (enemiesRemaining <= 0)
         {

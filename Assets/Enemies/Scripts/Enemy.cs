@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 
     public virtual void TakeDamage(float damage)
     {
-        Debug.Log("Enemy taking " + damage + " damage.");
+        //Debug.Log("Enemy taking " + damage + " damage.");
         health -= damage;
         if (health <= 0f)
         {

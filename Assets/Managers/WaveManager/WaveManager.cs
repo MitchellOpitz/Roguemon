@@ -24,7 +24,7 @@ public class WaveManager : MonoBehaviour
         while (currentWave < totalWaves)
         {
             isWaveActive = true;
-            Debug.Log("Wave " + (currentWave + 1) + " started!");
+            //Debug.Log("Wave " + (currentWave + 1) + " started!");
 
             // Spawn enemies for the current wave
             SpawnWaveEnemies(currentWave);
@@ -32,13 +32,13 @@ public class WaveManager : MonoBehaviour
             // Wait for enemies to be defeated before starting the next wave
             yield return new WaitWhile(() => isWaveActive);
 
-            Debug.Log("Wave " + (currentWave + 1) + " cleared!");
+            //Debug.Log("Wave " + (currentWave + 1) + " cleared!");
 
             yield return new WaitForSeconds(timeBetweenWaves);
             currentWave++;
         }
 
-        Debug.Log("All waves cleared!");
+        //Debug.Log("All waves cleared!");
     }
 
     private void SpawnWaveEnemies(int waveIndex)
@@ -56,7 +56,7 @@ public class WaveManager : MonoBehaviour
 
     public void OnWaveCleared()
     {
-        Debug.Log("Wave clear method called.");
+        //Debug.Log("Wave clear method called.");
         isWaveActive = false;
     }
 }
