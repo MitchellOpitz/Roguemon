@@ -1434,10 +1434,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  minX: -18
-  maxX: 9
-  minZ: -11
-  maxZ: 7
 --- !u!54 &1680335244
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -2039,6 +2035,10 @@ PrefabInstance:
       propertyPath: enemySpawner
       value: 
       objectReference: {fileID: 1397112622}
+    - target: {fileID: 3583758052098288623, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
+      propertyPath: timeBetweenWaves
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4049459226717694774, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
       propertyPath: m_Name
       value: WaveManager

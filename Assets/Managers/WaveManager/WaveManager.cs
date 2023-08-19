@@ -27,7 +27,7 @@ public class WaveManager : MonoBehaviour
             //Debug.Log("Wave " + (currentWave + 1) + " started!");
 
             // Spawn enemies for the current wave
-            SpawnWaveEnemies(currentWave);
+            StartCoroutine(SpawnWaveEnemies(currentWave));
 
             // Wait for enemies to be defeated before starting the next wave
             yield return new WaitWhile(() => isWaveActive);
@@ -41,7 +41,7 @@ public class WaveManager : MonoBehaviour
         //Debug.Log("All waves cleared!");
     }
 
-    private void SpawnWaveEnemies(int waveIndex)
+    private IEnumerator SpawnWaveEnemies(int waveIndex)
     {
         if (waveIndex < waves.Length)
         {
@@ -50,9 +50,13 @@ public class WaveManager : MonoBehaviour
             {
                 Vector3 spawnPosition = GetRandomSpawnPosition();
                 enemySpawner.SpawnEnemy(waveConfig.enemyTypePrefab, spawnPosition);
+
+                // Wait for the specified time before spawning the next enemy
+                yield return new WaitForSeconds(waveConfig.timeBetweenSpawns);
             }
         }
     }
+
 
     public void OnWaveCleared()
     {
