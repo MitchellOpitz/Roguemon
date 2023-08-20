@@ -12,6 +12,7 @@ public class Pet : MonoBehaviour
     public int maxMana;
     public int currentMana;
     public int manaGainPerAttack;
+    public GameObject bulletPrefab;
     // public SpecialAbility specialAbility;
 
     private float attackCooldown = 2f;
@@ -54,10 +55,24 @@ public class Pet : MonoBehaviour
 
     public void Attack() // param: Pet targetPet
     {
+        Debug.Log("Attacking.");
+        GameObject target = FindClosestEnemy();
+        if (target != null)
+        {
+            GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
+            Bullet bulletComponent = bullet.GetComponent<Bullet>();
+
+            if (bulletComponent != null)
+            {
+                bulletComponent.SetTarget(target.transform);
+            }
+
+            GainMana(manaGainPerAttack);
+        }
+
         // Attack logic, reduce target's health
         //targetPet.TakeDamage(attack);
         //Debug.Log("Attacking for " + attack + " damage.");
-        GainMana(manaGainPerAttack);
     }
 
     public void GainMana(int manaAmount)
@@ -81,9 +96,36 @@ public class Pet : MonoBehaviour
 
     public void Die()
     {
-        Debug.Log("Health has reached 0.  Dieing.");
+        //Debug.Log("Health has reached 0.  Dieing.");
         // Death logic, remove the pet from the game or handle it as needed
         partyManager.PetDied(gameObject);
         Destroy(gameObject);
+    }
+
+    private GameObject FindClosestEnemy()
+    {
+        // Find all enemies in the scene with the "Enemy" tag
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemies.Length > 0)
+        {
+            // Find the nearest enemy
+            GameObject nearestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (GameObject enemy in enemies)
+            {
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+                if (distanceToEnemy < closestDistance)
+                {
+                    closestDistance = distanceToEnemy;
+                    nearestEnemy = enemy;
+                }
+            }
+
+            return nearestEnemy;
+        }
+        return null;
     }
 }
