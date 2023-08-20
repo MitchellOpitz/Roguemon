@@ -16,9 +16,11 @@ public class Pet : MonoBehaviour
 
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
+    private PartyManager partyManager;
 
     private void Start()
     {
+        partyManager = FindAnyObjectByType<PartyManager>();
         currentHealth = maxHealth;
         currentMana = 0;
     }
@@ -37,12 +39,12 @@ public class Pet : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        Debug.Log("Taking " + damage + " damage.");
+        //Debug.Log("Taking " + damage + " damage.");
         // Apply damage calculation, considering defense
         int actualDamage = Mathf.Max(0, damage - defense);
-        Debug.Log("Damage after defense: " + actualDamage);
+        //Debug.Log("Damage after defense: " + actualDamage);
         currentHealth -= actualDamage;
-        Debug.Log("Current health: " + currentHealth + " / " + maxHealth);
+        //Debug.Log("Current health: " + currentHealth + " / " + maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -54,14 +56,14 @@ public class Pet : MonoBehaviour
     {
         // Attack logic, reduce target's health
         //targetPet.TakeDamage(attack);
-        Debug.Log("Attacking for " + attack + " damage.");
+        //Debug.Log("Attacking for " + attack + " damage.");
         GainMana(manaGainPerAttack);
     }
 
     public void GainMana(int manaAmount)
     {
         currentMana += manaAmount;
-        Debug.Log("Current mana: " + currentMana + " / " + maxMana);
+        //Debug.Log("Current mana: " + currentMana + " / " + maxMana);
 
         if (currentMana >= maxMana)
         {
@@ -74,13 +76,14 @@ public class Pet : MonoBehaviour
     {
         //specialAbility.Activate(this);
         currentMana = 0;
-        Debug.Log("Special cast.  Current mana: " + currentMana);
+        //Debug.Log("Special cast.  Current mana: " + currentMana);
     }
 
     public void Die()
     {
         Debug.Log("Health has reached 0.  Dieing.");
         // Death logic, remove the pet from the game or handle it as needed
+        partyManager.PetDied(gameObject);
         Destroy(gameObject);
     }
 }
