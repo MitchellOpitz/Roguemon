@@ -24,6 +24,13 @@ public class Bullet : MonoBehaviour
             {
                 HitTarget();
             }
+        } else
+        {
+            FindNewTarget();
+            if (target != null)
+            {
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -37,5 +44,31 @@ public class Bullet : MonoBehaviour
         }
 
         Destroy(gameObject); // Destroy the bullet
+    }
+
+    private void FindNewTarget()
+    {
+        // Find all enemies in the scene with the "Enemy" tag
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if (enemies.Length > 0)
+        {
+            // Find the nearest enemy
+            GameObject nearestEnemy = null;
+            float closestDistance = Mathf.Infinity;
+
+            foreach (GameObject enemy in enemies)
+            {
+                float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
+
+                if (distanceToEnemy < closestDistance)
+                {
+                    closestDistance = distanceToEnemy;
+                    nearestEnemy = enemy;
+                }
+            }
+
+            target = nearestEnemy.transform;
+        }
     }
 }
