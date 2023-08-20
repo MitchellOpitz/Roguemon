@@ -16,6 +16,7 @@ GameObject:
   - component: {fileID: 3011820419580908673}
   - component: {fileID: 8210747168626838558}
   - component: {fileID: 2367198505125457590}
+  - component: {fileID: -2073484434365006847}
   m_Layer: 0
   m_Name: PetType1
   m_TagString: Player
@@ -175,5 +176,27 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  followDistance: 1
-  moveSpeed: 2
+  followDistance: 1.5
+--- !u!114 &-2073484434365006847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671882007623924233}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f05ad4d1161cb46807a833382d0e71, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  petName: Testie
+  type: 0
+  petClass: 0
+  maxHealth: 100
+  currentHealth: 0
+  defense: 1
+  attack: 3
+  maxMana: 50
+  currentMana: 0
+  manaGainPerAttack: 10
+  bulletPrefab: {fileID: 5364989974890306649, guid: 74c815e04ff6e854c85c6b5cbc793783, type: 3}

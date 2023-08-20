@@ -4,7 +4,12 @@ public class Follow : MonoBehaviour
 {
     public Transform target; // Reference to the target pet to follow
     public float followDistance = 2f; // Distance between pets
-    public float moveSpeed = 2.0f; // Speed at which followers move towards the target
+    private float moveSpeed;
+
+    private void Start()
+    {
+        moveSpeed = GetComponent<PlayerMovement>().moveSpeed;
+    }
 
     private void Update()
     {

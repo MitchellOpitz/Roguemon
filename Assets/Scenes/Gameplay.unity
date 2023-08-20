@@ -373,6 +373,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2786023665512798202, guid: f944ea0ba1ed56c46b74248672fd0f64, type: 3}
+      propertyPath: m_BlockingMask.m_Bits
+      value: 4294967295
+      objectReference: {fileID: 0}
     - target: {fileID: 3585469221346302312, guid: f944ea0ba1ed56c46b74248672fd0f64, type: 3}
       propertyPath: m_Name
       value: SceneManager
@@ -471,8 +475,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 383.74, y: -68.38077}
-  m_SizeDelta: {x: 307.51, y: 467.2385}
+  m_AnchoredPosition: {x: 452.74, y: -68.38077}
+  m_SizeDelta: {x: 169.51, y: 467.2385}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &701355808
 MonoBehaviour:
@@ -583,8 +587,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -153.75574, y: 0}
-  m_SizeDelta: {x: 307.5115, y: 235.2691}
+  m_AnchoredPosition: {x: -84.75714, y: 0}
+  m_SizeDelta: {x: 169.5143, y: 235.2691}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &893667472
 MonoBehaviour:

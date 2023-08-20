@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class PartyManager : MonoBehaviour
 {
@@ -8,7 +9,8 @@ public class PartyManager : MonoBehaviour
     public GameObject startingPet;  // Remove later.
     public Vector3 startingSpawn;  // Remove later.
 
-    public GameObject[] party;
+    public List<GameObject> party = new List<GameObject>();
+
 
     private void Awake()
     {
@@ -27,7 +29,7 @@ public class PartyManager : MonoBehaviour
 
     private void TestParty()
     {
-        for (int i = 01; i <= 10; i++)
+        for (int i = 01; i <= 5; i++)
         {
             StartCoroutine(AddStartingPetWithDelay(i * 3f));
         }
@@ -43,10 +45,9 @@ public class PartyManager : MonoBehaviour
     {
         GameObject starterPet = Instantiate(selectedPet, startingSpawn, Quaternion.identity);
 
-        // Initialize followerPets array
-        GameObject[] newParty = new GameObject[1];
-        newParty[0] = starterPet;
-        party = newParty;
+        // Initialize party list
+        party.Clear();
+        party.Add(starterPet);
 
         // Initialize UI for pet party
         UpdatePartyMovement();
@@ -54,35 +55,33 @@ public class PartyManager : MonoBehaviour
 
     public void AddToParty(GameObject pet)
     {
-        // Calculate spawn position behind the last member of the party
-        Vector3 spawnDirection = -party[party.Length - 1].transform.forward;
-        //Debug.Log("Spawn Direction: " + spawnDirection);
-        Vector3 spawnPosition = party[party.Length - 1].transform.position + spawnDirection * 1.5f;
-        //Debug.Log("Spawn Position: " + spawnPosition);
+        if (party.Count > 0)
+        {
+            // Calculate spawn position behind the last member of the party
+            Vector3 spawnDirection = -party[party.Count - 1].transform.forward;
+            Vector3 spawnPosition = party[party.Count - 1].transform.position + spawnDirection * 1.5f;
 
-        // Instantiate the new pet behind the last party member
-        GameObject newPet = Instantiate(pet, spawnPosition, Quaternion.identity);
-        newPet.transform.forward = transform.forward;
+            // Instantiate the new pet behind the last party member
+            GameObject newPet = Instantiate(pet, spawnPosition, Quaternion.identity);
+            newPet.transform.forward = transform.forward;
 
-        // Update the party array to include the new pet
-        GameObject[] newParty = new GameObject[party.Length + 1];
-        party.CopyTo(newParty, 0);
-        newParty[newParty.Length - 1] = newPet;
-        party = newParty;
+            // Add the new pet to the party list
+            party.Add(newPet);
 
-        UpdatePartyMovement();
+            UpdatePartyMovement();
+        }
     }
 
     private void UpdatePartyMovement()
     {
-        for (int i = 0; i < party.Length; i++)
+        for (int i = 0; i < party.Count; i++)
         {
             PlayerMovement playerMovement = party[i].GetComponent<PlayerMovement>();
             Follow follow = party[i].GetComponent<Follow>();
 
             if (i == 0)
             {
-                // Debug.Log("Updating Lead Pet.");
+                Debug.Log("Updating Lead Pet.");
                 // Lead pet
                 playerMovement.enabled = true;
                 follow.enabled = false;
@@ -91,11 +90,17 @@ public class PartyManager : MonoBehaviour
             else
             {
                 // Follower pets
-                // Debug.Log("Updating Follower Pet " + i + ".");
+                Debug.Log("Updating Follower Pet " + i + ".");
                 playerMovement.enabled = false;
                 follow.enabled = true;
                 follow.target = party[i - 1].transform;
             }
         }
+    }
+
+    public void PetDied(GameObject deadPet)
+    {
+        party.Remove(deadPet);
+        UpdatePartyMovement();
     }
 }
