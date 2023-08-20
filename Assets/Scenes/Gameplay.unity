@@ -1196,7 +1196,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bde2269a6f434a8d3c9a54bc7e4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPet: {fileID: 1671882007623924233, guid: 592330b150b960848ab32f655e438004, type: 3}
+  startingPet: {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
   startingSpawn: {x: 0, y: 0, z: 0}
   party: []
 --- !u!4 &1484578998

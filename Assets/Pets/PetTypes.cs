@@ -1,8 +1,16 @@
 public enum PetType
 {
-    Melee,
-    Ranged,
-    Magic,
-    Support,
-    Tank
+    None,
+    Fighting,
+    Steel,
+    Electric,
+    Ground,
+    Water,
+    Poison,
+    Fairy,
+    Psychic,
+    Ghost,
+    Ice,
+    Fire,
+    Wind
 }
