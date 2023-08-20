@@ -37,9 +37,12 @@ public class Pet : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
+        Debug.Log("Taking " + damage + " damage.");
         // Apply damage calculation, considering defense
         int actualDamage = Mathf.Max(0, damage - defense);
+        Debug.Log("Damage after defense: " + actualDamage);
         currentHealth -= actualDamage;
+        Debug.Log("Current health: " + currentHealth + " / " + maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -76,6 +79,7 @@ public class Pet : MonoBehaviour
 
     public void Die()
     {
+        Debug.Log("Health has reached 0.  Dieing.");
         // Death logic, remove the pet from the game or handle it as needed
         Destroy(gameObject);
     }

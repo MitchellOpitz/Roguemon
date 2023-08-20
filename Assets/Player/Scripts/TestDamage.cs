@@ -19,6 +19,15 @@ public class TestDamage : MonoBehaviour
             {
                 enemyHealth.TakeDamage(damageAmount);
             }
+
+            // Get the pet component
+            Pet pet = GetComponent<Pet>();
+
+            // If the pet has a component, deal damage to it
+            if (pet != null)
+            {
+                pet.TakeDamage(damageAmount);
+            }
         }
     }
 }
