@@ -3,7 +3,8 @@ using UnityEngine;
 public class Pet : MonoBehaviour
 {
     public string petName;
-    public PetType type;
+    public PetType type1;
+    public PetType type2;
     public PetClass petClass;
     public int maxHealth;
     public int currentHealth;
