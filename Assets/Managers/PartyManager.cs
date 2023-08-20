@@ -22,7 +22,7 @@ public class PartyManager : MonoBehaviour
         }
 
         InitializePetParty(startingPet);  // Later, this will be done from the Pet Selection menu at the start of the game.
-        TestParty();
+        //TestParty();
     }
 
     private void TestParty()
