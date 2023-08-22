@@ -56,7 +56,7 @@ public class Pet : MonoBehaviour
 
     public void Attack() // param: Pet targetPet
     {
-        Debug.Log("Attacking.");
+        //Debug.Log("Attacking.");
         GameObject target = FindClosestEnemy();
         if (target != null)
         {
