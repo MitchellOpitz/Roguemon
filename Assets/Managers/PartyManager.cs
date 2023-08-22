@@ -110,4 +110,15 @@ public class PartyManager : MonoBehaviour
         synergyManager.UpdateSynergies(party);
         UpdatePartyMovement();
     }
+
+    public bool CheckRoomForPets()
+    {
+        if (party.Count < 6)
+        {
+            return true;
+        } else
+        {
+            return false;
+        }
+    }
 }

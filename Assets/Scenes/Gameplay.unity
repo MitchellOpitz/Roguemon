@@ -365,6 +365,71 @@ MonoBehaviour:
   maxX: 9.5
   minZ: -11
   maxZ: 7
+--- !u!1 &462578321
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 462578322}
+  - component: {fileID: 462578323}
+  m_Layer: 0
+  m_Name: UpgradesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &462578322
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462578321}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1428711024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &462578323
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 462578321}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac88b7ae13a670439d95d33eedbc027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPetUpgrades:
+  - upgradeName: Backsplash
+    description: This is a test description for Backsplash.
+    type: 0
+    newPetPrefab: {fileID: 2961623156242086183, guid: e4887ed4ad654d84ba83063f21ed8aea, type: 3}
+  - upgradeName: Chillenger
+    description: This is a test description for Chillenger.
+    type: 0
+    newPetPrefab: {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
+  - upgradeName: Hurtthrob
+    description: This is a test description for Hurtthrob.
+    type: 0
+    newPetPrefab: {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
+  - upgradeName: Infearno
+    description: This is a test description for Infearno.
+    type: 0
+    newPetPrefab: {fileID: 6001932149823993158, guid: 0467817ece531344783e75c5e38fa496, type: 3}
+  - upgradeName: McZappy
+    description: This is a test description for McZappy.
+    type: 0
+    newPetPrefab: {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
 --- !u!1 &477379231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2294,6 +2359,7 @@ Transform:
   - {fileID: 893172402}
   - {fileID: 1105482566}
   - {fileID: 1712694858}
+  - {fileID: 462578322}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456655874
