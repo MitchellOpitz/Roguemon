@@ -51,6 +51,7 @@ public class WaveManager : MonoBehaviour
         }
 
         Debug.Log("All waves cleared!");
+        SceneManagement.instance.LoadSceneByName("Title");
     }
 
 
