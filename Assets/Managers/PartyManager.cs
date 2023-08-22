@@ -5,11 +5,6 @@ using System.Collections.Generic;
 public class PartyManager : MonoBehaviour
 {
     public static PartyManager Instance { get; private set; }
-
-    public GameObject startingPet;  // Remove later.
-    public GameObject pet2;  // Remove later.
-    public GameObject pet3;  // Remove later.
-    public GameObject pet4;  // Remove later.
     public Vector3 startingSpawn;  // Remove later.
 
 
@@ -27,22 +22,6 @@ public class PartyManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        InitializePetParty(startingPet);  // Later, this will be done from the Pet Selection menu at the start of the game.
-        TestParty();
-    }
-
-    private void TestParty()
-    {
-        StartCoroutine(AddStartingPetWithDelay(10f, pet2));
-        StartCoroutine(AddStartingPetWithDelay(20f, pet3));
-        StartCoroutine(AddStartingPetWithDelay(30f, pet4));
-    }
-
-    private IEnumerator AddStartingPetWithDelay(float time, GameObject pet)
-    {
-        yield return new WaitForSeconds(time);
-        AddToParty(pet);
     }
 
     public void InitializePetParty(GameObject selectedPet)
@@ -59,7 +38,11 @@ public class PartyManager : MonoBehaviour
 
     public void AddToParty(GameObject pet)
     {
-        if (party.Count > 0)
+        if (party.Count == 0)
+        {
+            InitializePetParty(pet);
+        }
+        else
         {
             // Calculate spawn position behind the last member of the party
             Vector3 spawnDirection = -party[party.Count - 1].transform.forward;
