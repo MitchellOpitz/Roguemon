@@ -7,9 +7,14 @@ public class PartyManager : MonoBehaviour
     public static PartyManager Instance { get; private set; }
 
     public GameObject startingPet;  // Remove later.
+    public GameObject pet2;  // Remove later.
+    public GameObject pet3;  // Remove later.
+    public GameObject pet4;  // Remove later.
     public Vector3 startingSpawn;  // Remove later.
 
+
     public List<GameObject> party = new List<GameObject>();
+    public SynergyManager synergyManager;
 
 
     private void Awake()
@@ -29,16 +34,15 @@ public class PartyManager : MonoBehaviour
 
     private void TestParty()
     {
-        for (int i = 01; i <= 5; i++)
-        {
-            StartCoroutine(AddStartingPetWithDelay(i * 3f));
-        }
+        StartCoroutine(AddStartingPetWithDelay(10f, pet2));
+        StartCoroutine(AddStartingPetWithDelay(20f, pet3));
+        StartCoroutine(AddStartingPetWithDelay(30f, pet4));
     }
 
-    private IEnumerator AddStartingPetWithDelay(float time)
+    private IEnumerator AddStartingPetWithDelay(float time, GameObject pet)
     {
-        yield return new WaitForSeconds(time); // Wait for 3 seconds
-        AddToParty(startingPet);
+        yield return new WaitForSeconds(time);
+        AddToParty(pet);
     }
 
     public void InitializePetParty(GameObject selectedPet)
@@ -69,6 +73,8 @@ public class PartyManager : MonoBehaviour
             party.Add(newPet);
 
             UpdatePartyMovement();
+
+            synergyManager.UpdateSynergies(party);
         }
     }
 
@@ -81,7 +87,7 @@ public class PartyManager : MonoBehaviour
 
             if (i == 0)
             {
-                Debug.Log("Updating Lead Pet.");
+                //Debug.Log("Updating Lead Pet.");
                 // Lead pet
                 playerMovement.enabled = true;
                 follow.enabled = false;
@@ -90,7 +96,7 @@ public class PartyManager : MonoBehaviour
             else
             {
                 // Follower pets
-                Debug.Log("Updating Follower Pet " + i + ".");
+                //Debug.Log("Updating Follower Pet " + i + ".");
                 playerMovement.enabled = false;
                 follow.enabled = true;
                 follow.target = party[i - 1].transform;
@@ -101,6 +107,7 @@ public class PartyManager : MonoBehaviour
     public void PetDied(GameObject deadPet)
     {
         party.Remove(deadPet);
+        synergyManager.UpdateSynergies(party);
         UpdatePartyMovement();
     }
 }
