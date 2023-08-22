@@ -1197,9 +1197,9 @@ RectTransform:
   - {fileID: 1157384312}
   m_Father: {fileID: 1733073744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 213.33333, y: -289.7741}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1104534772
@@ -2283,9 +2283,9 @@ RectTransform:
   - {fileID: 1690181052}
   m_Father: {fileID: 1733073744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 1066.6666, y: -289.7741}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1398593121
@@ -2525,10 +2525,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c3bde2269a6f434a8d3c9a54bc7e4dd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  startingPet: {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
-  pet2: {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
-  pet3: {fileID: 6001932149823993158, guid: 0467817ece531344783e75c5e38fa496, type: 3}
-  pet4: {fileID: 3141846721791014601, guid: 0f2a15b119420564ab612e60a3fbcd27, type: 3}
   startingSpawn: {x: 0, y: 0, z: 0}
   party: []
   synergyManager: {fileID: 1712694859}
@@ -3029,23 +3025,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1676000745}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe8c7e0ede6bf9a4596e4ab274946778, type: 3}
+  m_Script: {fileID: 11500000, guid: 9dc567b42f2f84242b6db232bca9258c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   upgradeMenuUI: {fileID: 1733073743}
-  startingPets:
-  - {fileID: 2961623156242086183, guid: e4887ed4ad654d84ba83063f21ed8aea, type: 3}
-  - {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
-  - {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
-  - {fileID: 6001932149823993158, guid: 0467817ece531344783e75c5e38fa496, type: 3}
-  - {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
-  - {fileID: 1102047040050780628, guid: 9e146f60d78edd04ea0ed91da80f06a4, type: 3}
-  - {fileID: 8383682260009015342, guid: 61204c46c1a0e85408605c1cdbff37ca, type: 3}
-  - {fileID: 1693745641299103208, guid: 1e959848002f2be458c1f64453da8096, type: 3}
-  - {fileID: 3141846721791014601, guid: 0f2a15b119420564ab612e60a3fbcd27, type: 3}
-  - {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
-  - {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
-  - {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
+  isUpgradeMenuOpen: 0
 --- !u!1 &1690181051
 GameObject:
   m_ObjectHideFlags: 0
@@ -3376,7 +3360,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1733073744
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4027,9 +4011,9 @@ RectTransform:
   - {fileID: 901688839}
   m_Father: {fileID: 1733073744}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 640, y: -289.7741}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2120076170
@@ -4183,6 +4167,10 @@ PrefabInstance:
       propertyPath: totalWaves
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3583758052098288623, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
+      propertyPath: upgradesUI
+      value: 
+      objectReference: {fileID: 1676000750}
     - target: {fileID: 3583758052098288623, guid: 8b031d5c542b00f4fbbe09c4d651586c, type: 3}
       propertyPath: enemySpawner
       value: 

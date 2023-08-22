@@ -5,17 +5,18 @@ using TMPro;
 public class UpgradesUI : MonoBehaviour
 {
     public GameObject upgradeMenuUI;
+    public bool isUpgradeMenuOpen;
 
     private void Start()
     {
         upgradeMenuUI.SetActive(false);
-        ShowUpgradeMenu();
     }
 
     public void ShowUpgradeMenu()
     {
         // Show the upgrade menu UI
         upgradeMenuUI.SetActive(true);
+        isUpgradeMenuOpen = true;
 
         // Randomly choose 3 upgrades
         for (int i = 0; i < 3; i++)
@@ -58,12 +59,14 @@ public class UpgradesUI : MonoBehaviour
     {
         Transform upgradeBlock = GameObject.Find("Upgrade" + (upgradeIndex + 1).ToString()).GetComponent<Transform>();
         Button button = upgradeBlock.GetChild(2).GetComponent<Button>();
+        button.onClick.RemoveAllListeners();
         button.onClick.AddListener(() => OnUpgradeOptionClicked(upgrade));
     }
 
     private void OnUpgradeOptionClicked(Upgrade upgrade)
     {
         upgrade.ApplyUpgrade(); // Apply the selected upgrade
+        isUpgradeMenuOpen = false;
         upgradeMenuUI.SetActive(false); // Hide the upgrade menu UI
     }
 }

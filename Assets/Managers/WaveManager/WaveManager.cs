@@ -5,6 +5,7 @@ public class WaveManager : MonoBehaviour
 {
     public EnemySpawner enemySpawner; // Reference to the enemy spawner
     public float timeBetweenWaves = 10f; // Time between waves in seconds
+    public UpgradesUI upgradesUI;
     public int totalWaves = 25; // Total number of waves
 
     public WaveConfiguration[] waves;
@@ -23,16 +24,27 @@ public class WaveManager : MonoBehaviour
 
         while (currentWave < totalWaves)
         {
-            isWaveActive = true;
-            //Debug.Log("Wave " + (currentWave + 1) + " started!");
+            // Pause the game before starting the wave
+            Time.timeScale = 0;
 
-            // Spawn enemies for the current wave
+            // Show the upgrade menu
+            upgradesUI.ShowUpgradeMenu();
+
+            // Wait until the upgrade menu is closed (player has made their selection)
+            yield return new WaitWhile(() => upgradesUI.isUpgradeMenuOpen);
+
+            // Resume the game
+            Time.timeScale = 1;
+
+            isWaveActive = true;
             StartCoroutine(SpawnWaveEnemies(currentWave));
+
+            // ... rest of your wave spawning logic ...
 
             // Wait for enemies to be defeated before starting the next wave
             yield return new WaitWhile(() => isWaveActive);
 
-            //Debug.Log("Wave " + (currentWave + 1) + " cleared!");
+            // ... rest of your wave clearing logic ...
 
             yield return new WaitForSeconds(timeBetweenWaves);
             currentWave++;
@@ -40,6 +52,7 @@ public class WaveManager : MonoBehaviour
 
         Debug.Log("All waves cleared!");
     }
+
 
     private IEnumerator SpawnWaveEnemies(int waveIndex)
     {
