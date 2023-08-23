@@ -120,7 +120,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 3
+  moveSpeed: 1
   type: Enemy type 2
 --- !u!114 &7062928019271032519
 MonoBehaviour:
