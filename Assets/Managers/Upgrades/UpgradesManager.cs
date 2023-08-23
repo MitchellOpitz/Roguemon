@@ -7,6 +7,7 @@ public class UpgradeManager : MonoBehaviour
 
     public List<NewPetUpgrade> newPetUpgrades = new List<NewPetUpgrade>();
     public List<UpgradeCurrentPet> currentPetUpgrades = new List<UpgradeCurrentPet>();
+    public List<SynergyUpgrade> synergyUpgrades = new List<SynergyUpgrade>();
 
     private void Awake()
     {
@@ -40,8 +41,8 @@ public class UpgradeManager : MonoBehaviour
                     Debug.Log("Type 1.");
                     return UpgradeExistingPet();
                 case 2:
-                    Debug.Log("Type 2.  Rerolling.");
-                    return GetRandomUpgrade();
+                    Debug.Log("Type 2.");
+                    return GetSynergyUpgrade();
                 default:
                     return GetRandomUpgrade();
             }
@@ -58,5 +59,11 @@ public class UpgradeManager : MonoBehaviour
     {
         int randomIndex = Random.Range(0, currentPetUpgrades.Count);
         return currentPetUpgrades[randomIndex].InitializeUpgrade();
+    }
+
+    private Upgrade GetSynergyUpgrade()
+    {
+        int randomIndex = Random.Range(0, synergyUpgrades.Count);
+        return synergyUpgrades[randomIndex];
     }
 }

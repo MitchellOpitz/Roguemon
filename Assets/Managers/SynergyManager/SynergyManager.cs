@@ -17,6 +17,8 @@ public class SynergyManager : MonoBehaviour
     public List<SynergyData> synergies = new List<SynergyData>();
 
     private Dictionary<PetType, int> typeCount = new Dictionary<PetType, int>();
+    // New dictionary to store permanent synergy bonuses
+    private Dictionary<PetType, int> permanentSynergyBonuses = new Dictionary<PetType, int>();
 
     private void Awake()
     {
@@ -65,6 +67,20 @@ public class SynergyManager : MonoBehaviour
             }
         }
 
+        // Apply permanent synergy bonuses
+        foreach (var entry in permanentSynergyBonuses)
+        {
+            PetType synergyType = entry.Key;
+            int bonusValue = entry.Value;
+
+            // Apply the permanent bonusValue to the pets or players as needed
+            // ...
+            if (typeCount.ContainsKey(synergyType))
+            {
+                typeCount[synergyType] += bonusValue;
+            }
+        }
+
         // Apply synergies based on type count
         foreach (SynergyData synergy in synergies)
         {
@@ -78,5 +94,22 @@ public class SynergyManager : MonoBehaviour
                 }
             }
         }
+    }
+
+    public void ApplyPermanentSynergyBonus(PetType synergyType)
+    {
+        // Add or update the permanent synergy bonus in the dictionary
+        if (permanentSynergyBonuses.ContainsKey(synergyType))
+        {
+            permanentSynergyBonuses[synergyType]++;
+        }
+        else
+        {
+            permanentSynergyBonuses.Add(synergyType, 1);
+        }
+        Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
+        Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
+
+        UpdateSynergies(PartyManager.Instance.party);
     }
 }
