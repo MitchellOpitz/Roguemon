@@ -32,6 +32,14 @@ public class UpgradeManager : MonoBehaviour
         } else
         {
             int upgradeTypeIndex = Random.Range(0, 3);
+
+            PartyManager partyManager = PartyManager.Instance;
+            if (upgradeTypeIndex == 0 && partyManager.party.Count == partyManager.maxPartySize)
+            {
+                Debug.Log("Party full!  Rerolling upgrades.");
+                return GetRandomUpgrade();
+            }
+
             switch (upgradeTypeIndex)
             {
                 case 0:

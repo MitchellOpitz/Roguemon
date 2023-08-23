@@ -6,6 +6,7 @@ public class PartyManager : MonoBehaviour
 {
     public static PartyManager Instance { get; private set; }
     public Vector3 startingSpawn;  // Remove later.
+    public int maxPartySize = 6;
 
 
     public List<GameObject> party = new List<GameObject>();
