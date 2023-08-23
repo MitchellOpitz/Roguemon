@@ -430,6 +430,34 @@ MonoBehaviour:
     description: This is a test description for McZappy.
     type: 0
     newPetPrefab: {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
+  - upgradeName: Razorwing
+    description: This is a test description for Razorwing
+    type: 0
+    newPetPrefab: {fileID: 1102047040050780628, guid: 9e146f60d78edd04ea0ed91da80f06a4, type: 3}
+  - upgradeName: Sadgegiver
+    description: This is a test description for Sadgegiver
+    type: 0
+    newPetPrefab: {fileID: 8383682260009015342, guid: 61204c46c1a0e85408605c1cdbff37ca, type: 3}
+  - upgradeName: Sala Bim
+    description: This is a test description for Sala Bim.
+    type: 0
+    newPetPrefab: {fileID: 1693745641299103208, guid: 1e959848002f2be458c1f64453da8096, type: 3}
+  - upgradeName: Shivice
+    description: This is a test description for Shivice
+    type: 0
+    newPetPrefab: {fileID: 3141846721791014601, guid: 0f2a15b119420564ab612e60a3fbcd27, type: 3}
+  - upgradeName: Spiritsieve
+    description: This is a test description for Spiritsieve
+    type: 0
+    newPetPrefab: {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
+  - upgradeName: Voltephant
+    description: This is a test description for Voltephant
+    type: 0
+    newPetPrefab: {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
+  - upgradeName: Yaypalmer
+    description: This is a test description for Yaypalmer
+    type: 0
+    newPetPrefab: {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
   currentPetUpgrades:
   - upgradeName: Health Up 10
     description: Health Up 10
@@ -461,6 +489,7 @@ MonoBehaviour:
     type: 1
     statToUpgrade: 2
     amount: 50
+  synergyUpgrades: []
 --- !u!1 &477379231
 GameObject:
   m_ObjectHideFlags: 0
@@ -2557,6 +2586,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   startingSpawn: {x: 0, y: 0, z: 0}
+  maxPartySize: 6
   party: []
   synergyManager: {fileID: 1712694859}
 --- !u!4 &1484578998
