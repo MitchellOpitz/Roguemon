@@ -10,7 +10,7 @@ public class WaveManager : MonoBehaviour
 
     public WaveConfiguration[] waves;
 
-    private int currentWave = 0;
+    public int currentWave = 0;
     private bool isWaveActive = false;
 
     private void Start()
