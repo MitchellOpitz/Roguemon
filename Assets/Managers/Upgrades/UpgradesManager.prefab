@@ -1,0 +1,175 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &5590192412043527014
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8947067667675594931}
+  - component: {fileID: 1047027153148792928}
+  m_Layer: 0
+  m_Name: UpgradesManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8947067667675594931
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590192412043527014}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1047027153148792928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5590192412043527014}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ac88b7ae13a670439d95d33eedbc027, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  newPetUpgrades:
+  - upgradeName: Backsplash
+    description: This is a test description for Backsplash.
+    type: 0
+    newPetPrefab: {fileID: 2961623156242086183, guid: e4887ed4ad654d84ba83063f21ed8aea, type: 3}
+  - upgradeName: Chillenger
+    description: This is a test description for Chillenger.
+    type: 0
+    newPetPrefab: {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
+  - upgradeName: Hurtthrob
+    description: This is a test description for Hurtthrob.
+    type: 0
+    newPetPrefab: {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
+  - upgradeName: Infearno
+    description: This is a test description for Infearno.
+    type: 0
+    newPetPrefab: {fileID: 6001932149823993158, guid: 0467817ece531344783e75c5e38fa496, type: 3}
+  - upgradeName: McZappy
+    description: This is a test description for McZappy.
+    type: 0
+    newPetPrefab: {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
+  - upgradeName: Razorwing
+    description: This is a test description for Razorwing
+    type: 0
+    newPetPrefab: {fileID: 1102047040050780628, guid: 9e146f60d78edd04ea0ed91da80f06a4, type: 3}
+  - upgradeName: Sadgegiver
+    description: This is a test description for Sadgegiver
+    type: 0
+    newPetPrefab: {fileID: 8383682260009015342, guid: 61204c46c1a0e85408605c1cdbff37ca, type: 3}
+  - upgradeName: Sala Bim
+    description: This is a test description for Sala Bim.
+    type: 0
+    newPetPrefab: {fileID: 1693745641299103208, guid: 1e959848002f2be458c1f64453da8096, type: 3}
+  - upgradeName: Shivice
+    description: This is a test description for Shivice
+    type: 0
+    newPetPrefab: {fileID: 3141846721791014601, guid: 0f2a15b119420564ab612e60a3fbcd27, type: 3}
+  - upgradeName: Spiritsieve
+    description: This is a test description for Spiritsieve
+    type: 0
+    newPetPrefab: {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
+  - upgradeName: Voltephant
+    description: This is a test description for Voltephant
+    type: 0
+    newPetPrefab: {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
+  - upgradeName: Yaypalmer
+    description: This is a test description for Yaypalmer
+    type: 0
+    newPetPrefab: {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
+  currentPetUpgrades:
+  - upgradeName: Health Up 10
+    description: Health Up 10
+    type: 1
+    statToUpgrade: 0
+    amount: 10
+  - upgradeName: Health Up 50
+    description: Health Up 50
+    type: 1
+    statToUpgrade: 0
+    amount: 50
+  - upgradeName: Attack Up 10
+    description: Attack Up 10
+    type: 1
+    statToUpgrade: 1
+    amount: 10
+  - upgradeName: Attack Up 50
+    description: Attack Up 50
+    type: 1
+    statToUpgrade: 1
+    amount: 50
+  - upgradeName: Defense Up 10
+    description: Defense Up 10
+    type: 1
+    statToUpgrade: 2
+    amount: 10
+  - upgradeName: Defense Up 50
+    description: Defense Up 50
+    type: 1
+    statToUpgrade: 2
+    amount: 50
+  synergyUpgrades:
+  - upgradeName: Fighting Synergy Bonus
+    description: Permanently gain +1 bonus to your Fighting synergy.
+    type: 0
+    synergyType: 1
+  - upgradeName: Steel Synergy Bonus
+    description: Permanently gain +1 bonus to your Steel synergy.
+    type: 0
+    synergyType: 2
+  - upgradeName: Electric Synergy Bonus
+    description: Permanently gain +1 bonus to your Electric synergy.
+    type: 0
+    synergyType: 3
+  - upgradeName: Ground Synergy Bonus
+    description: Permanently gain +1 bonus to your Ground synergy.
+    type: 0
+    synergyType: 4
+  - upgradeName: Water Synergy Bonus
+    description: Permanently gain +1 bonus to your Water synergy.
+    type: 0
+    synergyType: 5
+  - upgradeName: Poison Synergy Bonus
+    description: Permanently gain +1 bonus to your Poison synergy.
+    type: 0
+    synergyType: 6
+  - upgradeName: Fairy Synergy Bonus
+    description: Permanently gain +1 bonus to your Fairy synergy.
+    type: 0
+    synergyType: 7
+  - upgradeName: Psychic Synergy Bonus
+    description: Permanently gain +1 bonus to your Psychic synergy.
+    type: 0
+    synergyType: 8
+  - upgradeName: Ghost Synergy Bonus
+    description: Permanently gain +1 bonus to your Ghost synergy.
+    type: 0
+    synergyType: 9
+  - upgradeName: Ice Synergy Bonus
+    description: Permanently gain +1 bonus to your Ice synergy.
+    type: 0
+    synergyType: 10
+  - upgradeName: Fire Synergy Bonus
+    description: Permanently gain +1 bonus to your Fire synergy.
+    type: 0
+    synergyType: 11
+  - upgradeName: Wind Synergy Bonus
+    description: Permanently gain +1 bonus to your Wind synergy.
+    type: 0
+    synergyType: 12
