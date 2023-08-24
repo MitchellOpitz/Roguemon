@@ -13,12 +13,14 @@ public class Clamp : MonoBehaviour
 
     private void Awake()
     {
+        // Implement a singleton pattern to ensure only one instance of Clamp exists.
         if (Instance == null)
         {
             Instance = this;
         }
         else
         {
+            // If an instance already exists, destroy this duplicate instance.
             Destroy(gameObject);
         }
     }

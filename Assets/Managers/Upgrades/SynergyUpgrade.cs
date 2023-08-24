@@ -9,13 +9,13 @@ public class SynergyUpgrade : Upgrade
     {
         base.ApplyUpgrade(); // Call the base class method
 
-        // Access the PartyManager to manage party synergies
+        // Get a reference to the SynergyManager instance
         SynergyManager synergyManager = SynergyManager.Instance;
 
-        // Upgrade the chosen synergy by +1
+        // Apply a permanent synergy bonus to the specified synergy type
         synergyManager.ApplyPermanentSynergyBonus(synergyType);
 
-        // Output debug information
-        Debug.Log("Synergy upgrade button clicked.");
+        // Output debug information to the console
+        Debug.Log("Synergy upgrade applied: " + synergyType);
     }
 }

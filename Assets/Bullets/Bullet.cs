@@ -2,11 +2,12 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 10f;
-    public float damage = 10f;
+    public float speed = 10f;   // Speed of the bullet
+    public float damage = 10f;  // Damage dealt to the target
 
-    private Transform target;
+    private Transform target;   // The target to hit
 
+    // Set the target for the bullet
     public void SetTarget(Transform newTarget)
     {
         target = newTarget;
@@ -14,23 +15,34 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
+        // Check if there's a valid target
         if (target != null)
         {
-            Vector3 direction = (target.position - transform.position).normalized;
-            transform.Translate(direction * speed * Time.deltaTime);
-
-            float distanceToTarget = Vector3.Distance(transform.position, target.position);
-            if (distanceToTarget < 0.1f)
-            {
-                HitTarget();
-            }
-        } else
+            MoveToTarget();
+            CheckHitTarget();
+        }
+        else
         {
             FindNewTarget();
             if (target != null)
             {
                 Destroy(gameObject);
             }
+        }
+    }
+
+    private void MoveToTarget()
+    {
+        Vector3 direction = (target.position - transform.position).normalized;
+        transform.Translate(direction * speed * Time.deltaTime);
+    }
+
+    private void CheckHitTarget()
+    {
+        float distanceToTarget = Vector3.Distance(transform.position, target.position);
+        if (distanceToTarget < 0.1f)
+        {
+            HitTarget();
         }
     }
 

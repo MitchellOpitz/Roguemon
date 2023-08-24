@@ -1,17 +1,15 @@
 using UnityEngine;
-using System.Collections;
 using System.Collections.Generic;
 
+// Manages the player's pet party and related interactions.
 public class PartyManager : MonoBehaviour
 {
     public static PartyManager Instance { get; private set; }
     public Vector3 startingSpawn;  // Remove later.
     public int maxPartySize = 6;
 
-
     public List<GameObject> party = new List<GameObject>();
     public SynergyManager synergyManager;
-
 
     private void Awake()
     {
@@ -25,6 +23,7 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    // Initializes the player's pet party with the selected pet.
     public void InitializePetParty(GameObject selectedPet)
     {
         GameObject starterPet = Instantiate(selectedPet, startingSpawn, Quaternion.identity);
@@ -37,6 +36,7 @@ public class PartyManager : MonoBehaviour
         UpdatePartyMovement();
     }
 
+    // Adds a pet to the player's party.
     public void AddToParty(GameObject pet)
     {
         if (party.Count == 0)
@@ -62,6 +62,7 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    // Updates the movement behavior for the pets in the party.
     private void UpdatePartyMovement()
     {
         for (int i = 0; i < party.Count; i++)
@@ -71,7 +72,6 @@ public class PartyManager : MonoBehaviour
 
             if (i == 0)
             {
-                //Debug.Log("Updating Lead Pet.");
                 // Lead pet
                 playerMovement.enabled = true;
                 follow.enabled = false;
@@ -80,7 +80,6 @@ public class PartyManager : MonoBehaviour
             else
             {
                 // Follower pets
-                //Debug.Log("Updating Follower Pet " + i + ".");
                 playerMovement.enabled = false;
                 follow.enabled = true;
                 follow.target = party[i - 1].transform;
@@ -88,6 +87,7 @@ public class PartyManager : MonoBehaviour
         }
     }
 
+    // Handles the removal of a dead pet from the party.
     public void PetDied(GameObject deadPet)
     {
         party.Remove(deadPet);
@@ -95,14 +95,9 @@ public class PartyManager : MonoBehaviour
         UpdatePartyMovement();
     }
 
+    // Checks if there is room for more pets in the party.
     public bool CheckRoomForPets()
     {
-        if (party.Count < 6)
-        {
-            return true;
-        } else
-        {
-            return false;
-        }
+        return party.Count < maxPartySize;
     }
 }

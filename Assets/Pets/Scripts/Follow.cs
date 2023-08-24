@@ -8,6 +8,7 @@ public class Follow : MonoBehaviour
 
     private void Start()
     {
+        // Get the move speed from the attached PlayerMovement component
         moveSpeed = GetComponent<PlayerMovement>().moveSpeed;
     }
 
@@ -15,9 +16,10 @@ public class Follow : MonoBehaviour
     {
         if (target != null)
         {
+            // Calculate the position behind the target pet
             Vector3 targetPosition = target.position - target.forward * followDistance;
 
-            // Calculate the desired position behind the target pet
+            // Calculate the desired position for smooth movement
             Vector3 desiredPosition = targetPosition;
             if (Vector3.Distance(transform.position, targetPosition) > followDistance)
             {
