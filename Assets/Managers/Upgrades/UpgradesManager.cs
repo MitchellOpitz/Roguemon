@@ -21,35 +21,33 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
+    // Retrieves a random upgrade based on the game's progression.
     public Upgrade GetRandomUpgrade()
     {
-        // Set only pets on first wave
+        // Check if it's the first wave to decide which upgrades are available
         WaveManager waveManager = FindAnyObjectByType<WaveManager>();
         if (waveManager.CurrentWave == 0)
         {
-            Debug.Log("First wave!");
-            return GetRandomPet();
-        } else
+            return GetRandomPetUpgrade();
+        }
+        else
         {
             int upgradeTypeIndex = Random.Range(0, 3);
 
             PartyManager partyManager = PartyManager.Instance;
             if (upgradeTypeIndex == 0 && partyManager.party.Count == partyManager.maxPartySize)
             {
-                Debug.Log("Party full!  Rerolling upgrades.");
                 return GetRandomUpgrade();
             }
 
+            // Selects an upgrade based on the chosen type index
             switch (upgradeTypeIndex)
             {
                 case 0:
-                    Debug.Log("Type 0.");
-                    return GetRandomPet();
+                    return GetRandomPetUpgrade();
                 case 1:
-                    Debug.Log("Type 1.");
                     return UpgradeExistingPet();
                 case 2:
-                    Debug.Log("Type 2.");
                     return GetSynergyUpgrade();
                 default:
                     return GetRandomUpgrade();
@@ -57,18 +55,21 @@ public class UpgradeManager : MonoBehaviour
         }
     }
 
-    private Upgrade GetRandomPet()
+    // Retrieves a random new pet upgrade.
+    private Upgrade GetRandomPetUpgrade()
     {
         int randomIndex = Random.Range(0, newPetUpgrades.Count);
         return newPetUpgrades[randomIndex];
     }
 
+    // Retrieves an upgrade to improve an existing pet.
     private Upgrade UpgradeExistingPet()
     {
         int randomIndex = Random.Range(0, currentPetUpgrades.Count);
         return currentPetUpgrades[randomIndex].InitializeUpgrade();
     }
 
+    // Retrieves a random synergy upgrade.
     private Upgrade GetSynergyUpgrade()
     {
         int randomIndex = Random.Range(0, synergyUpgrades.Count);

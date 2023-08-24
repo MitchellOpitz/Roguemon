@@ -1,6 +1,6 @@
 public enum StatToUpgrade
 {
-    Health,
-    Attack,
-    Defense
+    Health,     // Represents an upgrade to the health stat.
+    Attack,     // Represents an upgrade to the attack stat.
+    Defense     // Represents an upgrade to the defense stat.
 }
