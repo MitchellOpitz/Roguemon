@@ -2,15 +2,13 @@ using UnityEngine;
 
 public class TestDamage : MonoBehaviour
 {
-    public int damageAmount = 25;
+    public int damageAmount = 25; // Amount of damage to deal
 
     private void OnTriggerEnter(Collider other)
     {
-        //Debug.Log("OnTriggerEnter called!");
         // Check if the collider belongs to an enemy
         if (other.CompareTag("Enemy"))
         {
-            //Debug.Log("Player touched an enemy!");
             // Get the enemy's health component
             Enemy enemyHealth = other.GetComponent<Enemy>();
 

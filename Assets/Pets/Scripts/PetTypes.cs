@@ -1,3 +1,4 @@
+// Enum representing different types for pets
 public enum PetType
 {
     None,

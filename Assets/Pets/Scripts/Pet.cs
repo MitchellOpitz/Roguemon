@@ -14,7 +14,6 @@ public class Pet : MonoBehaviour
     public int currentMana;
     public int manaGainPerAttack;
     public GameObject bulletPrefab;
-    // public SpecialAbility specialAbility;
 
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
@@ -22,9 +21,12 @@ public class Pet : MonoBehaviour
 
     private void Start()
     {
-        partyManager = FindAnyObjectByType<PartyManager>();
+        // Initialize current health and mana
         currentHealth = maxHealth;
         currentMana = 0;
+
+        // Get reference to PartyManager
+        partyManager = FindAnyObjectByType<PartyManager>();
     }
 
     private void Update()
@@ -41,12 +43,9 @@ public class Pet : MonoBehaviour
 
     public void TakeDamage(int damage)
     {
-        //Debug.Log("Taking " + damage + " damage.");
-        // Apply damage calculation, considering defense
+        // Calculate actual damage considering defense
         int actualDamage = Mathf.Max(0, damage - defense);
-        //Debug.Log("Damage after defense: " + actualDamage);
         currentHealth -= actualDamage;
-        //Debug.Log("Current health: " + currentHealth + " / " + maxHealth);
 
         if (currentHealth <= 0)
         {
@@ -54,9 +53,9 @@ public class Pet : MonoBehaviour
         }
     }
 
-    public void Attack() // param: Pet targetPet
+    public void Attack()
     {
-        //Debug.Log("Attacking.");
+        // Find closest enemy and attack
         GameObject target = FindClosestEnemy();
         if (target != null)
         {
@@ -70,16 +69,12 @@ public class Pet : MonoBehaviour
 
             GainMana(manaGainPerAttack);
         }
-
-        // Attack logic, reduce target's health
-        //targetPet.TakeDamage(attack);
-        //Debug.Log("Attacking for " + attack + " damage.");
     }
 
     public void GainMana(int manaAmount)
     {
+        // Increase current mana and cast special ability if mana reaches max
         currentMana += manaAmount;
-        //Debug.Log("Current mana: " + currentMana + " / " + maxMana);
 
         if (currentMana >= maxMana)
         {
@@ -90,30 +85,29 @@ public class Pet : MonoBehaviour
 
     public void CastSpecial()
     {
-        //specialAbility.Activate(this);
+        // Cast the special ability using accumulated mana
+        // specialAbility.Activate(this);
         currentMana = 0;
-        //Debug.Log("Special cast.  Current mana: " + currentMana);
     }
 
     public void Die()
     {
-        //Debug.Log("Health has reached 0.  Dieing.");
-        // Death logic, remove the pet from the game or handle it as needed
+        // Handle pet's death
         partyManager.PetDied(gameObject);
         Destroy(gameObject);
     }
 
     private GameObject FindClosestEnemy()
     {
-        // Find all enemies in the scene with the "Enemy" tag
+        // Find the closest enemy within the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if (enemies.Length > 0)
         {
-            // Find the nearest enemy
             GameObject nearestEnemy = null;
             float closestDistance = Mathf.Infinity;
 
+            // Iterate through enemies to find the nearest one
             foreach (GameObject enemy in enemies)
             {
                 float distanceToEnemy = Vector3.Distance(transform.position, enemy.transform.position);
@@ -127,6 +121,6 @@ public class Pet : MonoBehaviour
 
             return nearestEnemy;
         }
-        return null;
+        return null; // Return null if no enemies found
     }
 }
