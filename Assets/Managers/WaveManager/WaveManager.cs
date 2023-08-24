@@ -3,21 +3,23 @@ using System.Collections;
 
 public class WaveManager : MonoBehaviour
 {
-    public EnemySpawner enemySpawner; // Reference to the enemy spawner
-    public float timeBetweenWaves = 10f; // Time between waves in seconds
-    public UpgradesUI upgradesUI;
-    public int totalWaves = 25; // Total number of waves
+    public EnemySpawner enemySpawner;           // Reference to the enemy spawner
+    public float timeBetweenWaves = 10f;        // Time between waves in seconds
+    public UpgradesUI upgradesUI;               // Reference to the upgrades UI
+    public int totalWaves = 25;                 // Total number of waves
 
-    public WaveConfiguration[] waves;
+    public WaveConfiguration[] waves;           // Array to store wave configurations
 
-    public int currentWave = 0;
-    private bool isWaveActive = false;
+    private int currentWave = 0;                // Current wave index
+    public int CurrentWave => currentWave;      // Expose currentWave as a public property
+    private bool isWaveActive = false;          // Flag to track active wave state
 
     private void Start()
     {
         StartCoroutine(StartWaveSequence());
     }
 
+    // Coroutine to manage the sequence of waves
     private IEnumerator StartWaveSequence()
     {
         yield return new WaitForSeconds(3f); // Initial delay before starting waves
@@ -54,7 +56,7 @@ public class WaveManager : MonoBehaviour
         SceneManagement.instance.LoadSceneByName("Title");
     }
 
-
+    // Coroutine to spawn enemies for a wave
     private IEnumerator SpawnWaveEnemies(int waveIndex)
     {
         if (waveIndex < waves.Length)
@@ -72,21 +74,21 @@ public class WaveManager : MonoBehaviour
         }
     }
 
-
+    // Callback method when a wave is cleared
     public void OnWaveCleared()
     {
-        //Debug.Log("Wave clear method called.");
         isWaveActive = false;
     }
 
+    // Get a random spawn position within the defined bounds
     private Vector3 GetRandomSpawnPosition()
     {
         float randomX = Random.Range(Clamp.Instance.minX, Clamp.Instance.maxX);
         float randomZ = Random.Range(Clamp.Instance.minZ, Clamp.Instance.maxZ);
-
         return new Vector3(randomX, 0.125f, randomZ);
     }
 
+    // Calculate a spawn offset for variation in enemy spawn positions
     private Vector3 GetSpawnOffset(Vector3 waveSpawnPosition)
     {
         float offsetX = Random.Range(-1f, 1f);
@@ -102,5 +104,4 @@ public class WaveManager : MonoBehaviour
 
         return spawnPosition;
     }
-
 }

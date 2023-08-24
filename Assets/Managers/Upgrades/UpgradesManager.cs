@@ -25,7 +25,7 @@ public class UpgradeManager : MonoBehaviour
     {
         // Set only pets on first wave
         WaveManager waveManager = FindAnyObjectByType<WaveManager>();
-        if (waveManager.currentWave == 0)
+        if (waveManager.CurrentWave == 0)
         {
             Debug.Log("First wave!");
             return GetRandomPet();

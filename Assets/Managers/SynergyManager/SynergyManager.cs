@@ -3,8 +3,10 @@ using System.Collections.Generic;
 
 public class SynergyManager : MonoBehaviour
 {
+    // Singleton instance
     public static SynergyManager Instance { get; private set; }
 
+    // Data structure to hold synergy information
     [System.Serializable]
     public class SynergyData
     {
@@ -14,14 +16,18 @@ public class SynergyManager : MonoBehaviour
         public int bonusValue;
     }
 
+    // List of defined synergies
     public List<SynergyData> synergies = new List<SynergyData>();
 
+    // Dictionary to track the count of each pet type in the party
     private Dictionary<PetType, int> typeCount = new Dictionary<PetType, int>();
-    // New dictionary to store permanent synergy bonuses
+
+    // Dictionary to store permanent synergy bonuses
     private Dictionary<PetType, int> permanentSynergyBonuses = new Dictionary<PetType, int>();
 
     private void Awake()
     {
+        // Singleton pattern implementation
         if (Instance == null)
         {
             Instance = this;
@@ -32,6 +38,7 @@ public class SynergyManager : MonoBehaviour
         }
     }
 
+    // Update the synergies based on the current party configuration
     public void UpdateSynergies(List<GameObject> party)
     {
         // Clear type count dictionary
@@ -52,10 +59,7 @@ public class SynergyManager : MonoBehaviour
                 {
                     typeCount.Add(petScript.type1, 1);
                 }
-            }
 
-            if (petScript != null)
-            {
                 if (typeCount.ContainsKey(petScript.type2))
                 {
                     typeCount[petScript.type2]++;
@@ -73,8 +77,6 @@ public class SynergyManager : MonoBehaviour
             PetType synergyType = entry.Key;
             int bonusValue = entry.Value;
 
-            // Apply the permanent bonusValue to the pets or players as needed
-            // ...
             if (typeCount.ContainsKey(synergyType))
             {
                 typeCount[synergyType] += bonusValue;
@@ -88,17 +90,15 @@ public class SynergyManager : MonoBehaviour
             {
                 if (petCountOfType >= synergy.requiredCount)
                 {
-                    // Apply synergy bonus
                     Debug.Log("Synergy activated: " + synergy.synergyName);
-                    // Apply the bonusValue to the pets or players as needed
                 }
             }
         }
     }
 
+    // Apply a permanent synergy bonus to a specific type
     public void ApplyPermanentSynergyBonus(PetType synergyType)
     {
-        // Add or update the permanent synergy bonus in the dictionary
         if (permanentSynergyBonuses.ContainsKey(synergyType))
         {
             permanentSynergyBonuses[synergyType]++;
@@ -107,6 +107,7 @@ public class SynergyManager : MonoBehaviour
         {
             permanentSynergyBonuses.Add(synergyType, 1);
         }
+
         Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
         Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
 
