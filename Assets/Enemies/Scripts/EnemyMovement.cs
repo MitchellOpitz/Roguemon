@@ -2,21 +2,21 @@ using UnityEngine;
 
 public class EnemyMovement : MonoBehaviour
 {
-    private Transform target; // Target to move towards (the player)
+    private Transform target; // The target to move towards (usually the player)
     private Enemy enemy; // Reference to the Enemy script
 
     private void Start()
     {
-        FindPlayer();
-        enemy = GetComponent<Enemy>(); // Get the reference to the Enemy script
+        FindPlayer(); // Find and assign the target (player)
+        enemy = GetComponent<Enemy>(); // Get the reference to the Enemy script component
     }
 
     private void FindPlayer()
     {
-        GameObject player = GameObject.FindGameObjectWithTag("Player");
+        GameObject player = GameObject.FindGameObjectWithTag("Player"); // Find the player by tag
         if (player != null)
         {
-            target = player.transform;
+            target = player.transform; // Set the player's transform as the target
         }
     }
 
@@ -24,14 +24,19 @@ public class EnemyMovement : MonoBehaviour
     {
         if (target != null)
         {
-            // Calculate the direction to the target (player's current position)
-            Vector3 direction = (target.position - transform.position).normalized;
-
-            // Calculate the new position using linear interpolation
-            Vector3 newPosition = transform.position + direction * enemy.moveSpeed * Time.deltaTime;
-
-            // Move the enemy
-            transform.position = newPosition;
+            MoveTowardsTarget(); // Move the enemy towards the target
         }
+    }
+
+    private void MoveTowardsTarget()
+    {
+        // Calculate the direction to the target (player's current position)
+        Vector3 directionToTarget = (target.position - transform.position).normalized;
+
+        // Calculate the new position using linear interpolation
+        Vector3 newPosition = transform.position + directionToTarget * enemy.moveSpeed * Time.deltaTime;
+
+        // Move the enemy to the new position
+        transform.position = newPosition;
     }
 }
