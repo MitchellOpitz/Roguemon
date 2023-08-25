@@ -99,27 +99,68 @@ public class SynergyManager : MonoBehaviour
 
     private void ApplySynergyBonus(PetType requiredType, int requiredCount)
     {
-        // Fighting
-        if (requiredType == PetType.Fighting)
+        switch (requiredType)
         {
-            FightingSynergy synergy = new FightingSynergy(requiredCount);
-            synergy.ApplySynergyBonus();
-        }
+            case PetType.Fighting:
+                FightingSynergy fightingSynergy = new FightingSynergy(requiredCount);
+                fightingSynergy.ApplySynergyBonus();
+                break;
 
-        // Steel
-        if (requiredType == PetType.Steel)
-        {
-            SteelSynergy synergy = new SteelSynergy(requiredCount);
-            synergy.ApplySynergyBonus();
-        }
+            case PetType.Steel:
+                SteelSynergy steelSynergy = new SteelSynergy(requiredCount);
+                steelSynergy.ApplySynergyBonus();
+                break;
 
-        // Electric
-        if (requiredType == PetType.Electric)
-        {
-            ElectricSynergy synergy = new ElectricSynergy(requiredCount);
-            synergy.ApplySynergyBonus();
-        }
+            case PetType.Electric:
+                ElectricSynergy electricSynergy = new ElectricSynergy(requiredCount);
+                electricSynergy.ApplySynergyBonus();
+                break;
 
+            case PetType.Ground:
+                GroundSynergy groundSynergy = new GroundSynergy(requiredCount);
+                groundSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Water:
+                WaterSynergy waterSynergy = new WaterSynergy(requiredCount);
+                waterSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Poison:
+                PoisonSynergy poisonSynergy = new PoisonSynergy(requiredCount);
+                poisonSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Fairy:
+                FairySynergy fairySynergy = new FairySynergy(requiredCount);
+                fairySynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Psychic:
+                PsychicSynergy psychicSynergy = new PsychicSynergy(requiredCount);
+                psychicSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Ghost:
+                GhostSynergy ghostSynergy = new GhostSynergy(requiredCount);
+                ghostSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Ice:
+                IceSynergy iceSynergy = new IceSynergy(requiredCount);
+                iceSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Wind:
+                WindSynergy windSynergy = new WindSynergy(requiredCount);
+                windSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Fire:
+                FireSynergy fireSynergy = new FireSynergy(requiredCount);
+                fireSynergy.ApplySynergyBonus();
+                break;
+        }
     }
 
     // Apply a permanent synergy bonus to a specific type
