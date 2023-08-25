@@ -80,6 +80,9 @@ public class SynergyManager : MonoBehaviour
             if (typeCount.ContainsKey(synergyType))
             {
                 typeCount[synergyType] += bonusValue;
+            } else
+            {
+                typeCount.Add(synergyType, bonusValue);
             }
         }
 
