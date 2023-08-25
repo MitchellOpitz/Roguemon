@@ -25,7 +25,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7020015018061846829}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -53,7 +53,115 @@ MonoBehaviour:
     requiredType: 1
     requiredCount: 3
     bonusValue: 0
-  - synergyName: Ice 2
-    requiredType: 10
+  - synergyName: Fighting 4
+    requiredType: 1
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Steel
+    requiredType: 2
+    requiredCount: 1
+    bonusValue: 0
+  - synergyName: Electric 2
+    requiredType: 3
     requiredCount: 2
+    bonusValue: 0
+  - synergyName: Electric 4
+    requiredType: 3
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Ground 2
+    requiredType: 4
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Ground 4
+    requiredType: 4
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Ground 6
+    requiredType: 4
+    requiredCount: 6
+    bonusValue: 0
+  - synergyName: Ground 8
+    requiredType: 4
+    requiredCount: 8
+    bonusValue: 0
+  - synergyName: Water 3
+    requiredType: 5
+    requiredCount: 3
+    bonusValue: 0
+  - synergyName: Water 5
+    requiredType: 5
+    requiredCount: 5
+    bonusValue: 0
+  - synergyName: Water 7
+    requiredType: 5
+    requiredCount: 7
+    bonusValue: 0
+  - synergyName: Poison 2
+    requiredType: 6
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Poison 4
+    requiredType: 6
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Fairy 1
+    requiredType: 7
+    requiredCount: 1
+    bonusValue: 0
+  - synergyName: Fairy 2
+    requiredType: 7
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Fairy 3
+    requiredType: 7
+    requiredCount: 3
+    bonusValue: 0
+  - synergyName: Psychic 2
+    requiredType: 8
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Psychic 3
+    requiredType: 8
+    requiredCount: 3
+    bonusValue: 0
+  - synergyName: Ghost 2
+    requiredType: 9
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Ghost 4
+    requiredType: 9
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Ice 3
+    requiredType: 10
+    requiredCount: 3
+    bonusValue: 0
+  - synergyName: Ice 6
+    requiredType: 10
+    requiredCount: 6
+    bonusValue: 0
+  - synergyName: Fire 2
+    requiredType: 11
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Fire 4
+    requiredType: 11
+    requiredCount: 4
+    bonusValue: 0
+  - synergyName: Fire 6
+    requiredType: 11
+    requiredCount: 6
+    bonusValue: 0
+  - synergyName: Wind 2
+    requiredType: 12
+    requiredCount: 2
+    bonusValue: 0
+  - synergyName: Wind 3
+    requiredType: 12
+    requiredCount: 3
+    bonusValue: 0
+  - synergyName: Wind 4
+    requiredType: 12
+    requiredCount: 4
     bonusValue: 0
