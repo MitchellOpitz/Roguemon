@@ -10,11 +10,18 @@ public class WindSynergy : Synergy
 
     public override void ApplySynergyBonus()
     {
-        Debug.Log("Triggered wind synergy bonus.");
+        // Debug.Log("Triggered wind synergy bonus.");
         float speedMultiplier = GetSpeedMultiplier(requiredCount);
 
         // Implement your logic to increase the team's movement speed
         // You can access the movement speed property of your characters and modify it.
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<PlayerMovement>().UpdateSpeed(speedMultiplier);
+            pet.GetComponent<Follow>().UpdateSpeed(speedMultiplier);
+        }
     }
 
     private float GetSpeedMultiplier(int requiredCount)
