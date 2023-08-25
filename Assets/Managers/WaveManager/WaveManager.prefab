@@ -45,8 +45,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemySpawner: {fileID: 0}
-  timeBetweenWaves: 10
-  totalWaves: 25
+  timeBetweenWaves: 3
+  upgradesUI: {fileID: 0}
+  totalWaves: 15
   waves:
   - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
     enemyCount: 1
@@ -57,6 +58,39 @@ MonoBehaviour:
   - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
     enemyCount: 5
     timeBetweenSpawns: 1
-  - enemyTypePrefab: {fileID: 3477862280047544613, guid: 38367c52b61ccbe4689c25e9f8b383c1, type: 3}
-    enemyCount: 10
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
+    timeBetweenSpawns: 1
+  - enemyTypePrefab: {fileID: 9131799187819911134, guid: 313c2d158a5495c4481e6b0ba3ac8259, type: 3}
+    enemyCount: 5
     timeBetweenSpawns: 1
