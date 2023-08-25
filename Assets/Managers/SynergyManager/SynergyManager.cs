@@ -44,6 +44,7 @@ public class SynergyManager : MonoBehaviour
         // Clear type count dictionary
         typeCount.Clear();
         Debug.Log("Clearing type count.");
+        ResetSynergies();
 
         // Count the number of each type in the party
         foreach (GameObject pet in party)
@@ -182,5 +183,25 @@ public class SynergyManager : MonoBehaviour
         // Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
 
         UpdateSynergies(PartyManager.Instance.party);
+    }
+
+    private void ResetSynergies()
+    {
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            // Wind
+            pet.GetComponent<PlayerMovement>().ResetSpeed();
+            pet.GetComponent<Follow>().ResetSpeed();
+
+            // Water
+            pet.GetComponent<Pet>().ResetManaGain();
+
+            // Ground
+            pet.GetComponent<Pet>().ResetMaxHealth();
+
+            // Ground
+            pet.GetComponent<DetectNearbyEnemies>().ResetSlowMultiplier();
+        }
     }
 }

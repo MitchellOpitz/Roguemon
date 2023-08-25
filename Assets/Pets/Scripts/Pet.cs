@@ -6,23 +6,28 @@ public class Pet : MonoBehaviour
     public PetType type1;
     public PetType type2;
     public PetClass petClass;
-    public int maxHealth;
+    public int baseMaxHealth;
     public int currentHealth;
     public int defense;
     public int attack;
-    public int maxMana;
-    public int currentMana;
-    public int manaGainPerAttack;
+    public float maxMana;
+    public float currentMana;
+    public float baseManaGainPerAttack;
     public GameObject bulletPrefab;
 
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
     private PartyManager partyManager;
+    private float manaGainPerAttack;
+    private int currentMaxHealth;
 
     private void Start()
     {
         // Initialize current health and mana
-        currentHealth = maxHealth;
+        ResetMaxHealth();
+        currentHealth = currentMaxHealth;
+
+        ResetManaGain();
         currentMana = 0;
 
         // Get reference to PartyManager
@@ -71,7 +76,7 @@ public class Pet : MonoBehaviour
         }
     }
 
-    public void GainMana(int manaAmount)
+    public void GainMana(float manaAmount)
     {
         // Increase current mana and cast special ability if mana reaches max
         currentMana += manaAmount;
@@ -122,5 +127,29 @@ public class Pet : MonoBehaviour
             return nearestEnemy;
         }
         return null; // Return null if no enemies found
+    }
+
+    public void ResetManaGain()
+    {
+        manaGainPerAttack = baseManaGainPerAttack;
+        // Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
+    }
+
+    public void UpdateManaGain(float multiplier)
+    {
+        manaGainPerAttack = baseManaGainPerAttack * (1 + multiplier);
+        // Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
+    }
+
+    public void ResetMaxHealth()
+    {
+        currentMaxHealth = baseMaxHealth;
+        // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
+    }
+
+    public void UpdateMaxHealth(float multiplier)
+    {
+        currentMaxHealth = (int)(baseMaxHealth * (1 + multiplier));
+        // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
     }
 }

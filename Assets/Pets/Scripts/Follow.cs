@@ -4,12 +4,14 @@ public class Follow : MonoBehaviour
 {
     public Transform target; // Reference to the target pet to follow
     public float followDistance = 2f; // Distance between pets
-    private float moveSpeed;
+    private float baseMoveSpeed;
+    private float currentMoveSpeed;
 
     private void Start()
     {
         // Get the move speed from the attached PlayerMovement component
-        moveSpeed = GetComponent<PlayerMovement>().moveSpeed;
+        baseMoveSpeed = GetComponent<PlayerMovement>().baseMoveSpeed;
+        ResetSpeed();
     }
 
     private void Update()
@@ -23,7 +25,7 @@ public class Follow : MonoBehaviour
             Vector3 desiredPosition = targetPosition;
             if (Vector3.Distance(transform.position, targetPosition) > followDistance)
             {
-                desiredPosition = Vector3.Lerp(transform.position, targetPosition, moveSpeed * Time.deltaTime);
+                desiredPosition = Vector3.Lerp(transform.position, targetPosition, currentMoveSpeed * Time.deltaTime);
             }
 
             // Move the current pet towards the desired position
@@ -31,7 +33,19 @@ public class Follow : MonoBehaviour
 
             // Rotate the pet smoothly to match the target's rotation
             Quaternion targetRotation = Quaternion.LookRotation(target.forward, Vector3.up);
-            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, moveSpeed * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, currentMoveSpeed * Time.deltaTime);
         }
+    }
+
+    public void ResetSpeed()
+    {
+        currentMoveSpeed = baseMoveSpeed;
+        // Debug.Log("Updating movement speed.  New speed: " + currentMoveSpeed);
+    }
+
+    public void UpdateSpeed(float multiplier)
+    {
+        currentMoveSpeed = baseMoveSpeed * (1 + multiplier);
+        // Debug.Log("Updating movement speed.  New speed: " + currentMoveSpeed);
     }
 }
