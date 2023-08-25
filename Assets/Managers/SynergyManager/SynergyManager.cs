@@ -199,6 +199,9 @@ public class SynergyManager : MonoBehaviour
 
             // Ground
             pet.GetComponent<Pet>().ResetMaxHealth();
+
+            // Ground
+            pet.GetComponent<DetectNearbyEnemies>().ResetSlowMultiplier();
         }
     }
 }

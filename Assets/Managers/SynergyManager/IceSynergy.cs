@@ -16,6 +16,12 @@ public class IceSynergy : Synergy
         // Implement your logic to apply the slowing effect to nearby enemies
         // For example, you could iterate through enemies within a certain radius
         // and apply a speed reduction to them.
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<DetectNearbyEnemies>().UpdateSlowMultiplier(slowAmount);
+        }
     }
 
     private float GetSlowAmount(int requiredCount)

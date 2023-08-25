@@ -34,7 +34,7 @@ public class EnemyMovement : MonoBehaviour
         Vector3 directionToTarget = (target.position - transform.position).normalized;
 
         // Calculate the new position using linear interpolation
-        Vector3 newPosition = transform.position + directionToTarget * enemy.moveSpeed * Time.deltaTime;
+        Vector3 newPosition = transform.position + directionToTarget * enemy.currentMoveSpeed * Time.deltaTime;
 
         // Move the enemy to the new position
         transform.position = newPosition;

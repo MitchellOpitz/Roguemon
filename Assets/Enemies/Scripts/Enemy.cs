@@ -3,7 +3,15 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     public float health = 100f;     // Current health of the enemy
-    public float moveSpeed = 3f;    // Speed at which the enemy moves
+    public float baseMoveSpeed = 3f;    // Speed at which the enemy moves
+    public bool isSlowed;
+
+    public float currentMoveSpeed;
+
+    private void Start()
+    {
+        ResetMoveSpeed();
+    }
 
     // Called to apply damage to the enemy
     public virtual void TakeDamage(float damage)
@@ -22,5 +30,19 @@ public class Enemy : MonoBehaviour
         EnemySpawner spawner = FindAnyObjectByType<EnemySpawner>();
         spawner.EnemyDefeated(); // Notify the enemy spawner about the defeat
         Destroy(gameObject); // Destroy the enemy game object
+    }
+
+    public void ResetMoveSpeed()
+    {
+        currentMoveSpeed = baseMoveSpeed;
+        isSlowed = false;
+        Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
+    }
+
+    public void UpdateMoveSpeed(float multiplier)
+    {
+        currentMoveSpeed = baseMoveSpeed - (baseMoveSpeed * multiplier);
+        isSlowed = true;
+        Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
     }
 }
