@@ -90,10 +90,36 @@ public class SynergyManager : MonoBehaviour
             {
                 if (petCountOfType >= synergy.requiredCount)
                 {
-                    Debug.Log("Synergy activated: " + synergy.synergyName);
+                    Debug.Log("Activating: " + synergy.requiredType + " " + synergy.requiredCount);
+                    ApplySynergyBonus(synergy.requiredType, synergy.requiredCount);
                 }
             }
         }
+    }
+
+    private void ApplySynergyBonus(PetType requiredType, int requiredCount)
+    {
+        // Fighting
+        if (requiredType == PetType.Fighting)
+        {
+            FightingSynergy synergy = new FightingSynergy(requiredCount);
+            synergy.ApplySynergyBonus();
+        }
+
+        // Steel
+        if (requiredType == PetType.Steel)
+        {
+            SteelSynergy synergy = new SteelSynergy(requiredCount);
+            synergy.ApplySynergyBonus();
+        }
+
+        // Electric
+        if (requiredType == PetType.Electric)
+        {
+            ElectricSynergy synergy = new ElectricSynergy(requiredCount);
+            synergy.ApplySynergyBonus();
+        }
+
     }
 
     // Apply a permanent synergy bonus to a specific type
@@ -108,8 +134,8 @@ public class SynergyManager : MonoBehaviour
             permanentSynergyBonuses.Add(synergyType, 1);
         }
 
-        Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
-        Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
+        // Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
+        // Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
 
         UpdateSynergies(PartyManager.Instance.party);
     }
