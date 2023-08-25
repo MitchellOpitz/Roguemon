@@ -15,6 +15,12 @@ public class GroundSynergy : Synergy
 
         // Implement your logic for applying the bonus max health to the team
         // For example, you could modify the max health of pets to increase their health by healthMultiplier
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<Pet>().UpdateMaxHealth(healthMultiplier);
+        }
     }
 
     private float GetHealthMultiplier(int requiredCount)

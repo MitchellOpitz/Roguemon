@@ -196,6 +196,9 @@ public class SynergyManager : MonoBehaviour
 
             // Water
             pet.GetComponent<Pet>().ResetManaGain();
+
+            // Ground
+            pet.GetComponent<Pet>().ResetMaxHealth();
         }
     }
 }

@@ -6,7 +6,7 @@ public class Pet : MonoBehaviour
     public PetType type1;
     public PetType type2;
     public PetClass petClass;
-    public int maxHealth;
+    public int baseMaxHealth;
     public int currentHealth;
     public int defense;
     public int attack;
@@ -19,16 +19,19 @@ public class Pet : MonoBehaviour
     private float timeSinceLastAttack = 0f;
     private PartyManager partyManager;
     private float manaGainPerAttack;
+    private int currentMaxHealth;
 
     private void Start()
     {
         // Initialize current health and mana
-        currentHealth = maxHealth;
+        ResetMaxHealth();
+        currentHealth = currentMaxHealth;
+
+        ResetManaGain();
         currentMana = 0;
 
         // Get reference to PartyManager
         partyManager = FindAnyObjectByType<PartyManager>();
-        ResetManaGain();
     }
 
     private void Update()
@@ -129,12 +132,24 @@ public class Pet : MonoBehaviour
     public void ResetManaGain()
     {
         manaGainPerAttack = baseManaGainPerAttack;
-        Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
+        // Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
     }
 
     public void UpdateManaGain(float multiplier)
     {
         manaGainPerAttack = baseManaGainPerAttack * (1 + multiplier);
-        Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
+        // Debug.Log("Updating mana per attack.  New value: " + manaGainPerAttack);
+    }
+
+    public void ResetMaxHealth()
+    {
+        currentMaxHealth = baseMaxHealth;
+        // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
+    }
+
+    public void UpdateMaxHealth(float multiplier)
+    {
+        currentMaxHealth = (int)(baseMaxHealth * (1 + multiplier));
+        // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
     }
 }
