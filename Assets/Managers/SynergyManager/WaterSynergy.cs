@@ -15,6 +15,13 @@ public class WaterSynergy : Synergy
 
         // Implement your logic for increasing the team's mana production
         // For example, you could modify the mana production rate of pets to increase their mana production by manaProductionMultiplier
+
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<Pet>().UpdateManaGain(manaProductionMultiplier);
+        }
     }
 
     private float GetManaProductionMultiplier(int requiredCount)

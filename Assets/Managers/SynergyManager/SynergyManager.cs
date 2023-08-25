@@ -193,6 +193,9 @@ public class SynergyManager : MonoBehaviour
             // Wind
             pet.GetComponent<PlayerMovement>().ResetSpeed();
             pet.GetComponent<Follow>().ResetSpeed();
+
+            // Water
+            pet.GetComponent<Pet>().ResetManaGain();
         }
     }
 }
