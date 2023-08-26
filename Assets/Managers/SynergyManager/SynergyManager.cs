@@ -202,6 +202,9 @@ public class SynergyManager : MonoBehaviour
 
             // Ground
             pet.GetComponent<DetectNearbyEnemies>().ResetSlowMultiplier();
+
+            // Psychic
+            pet.GetComponent<DetectNearbyEnemies>().ResetDamageMultiplier();
         }
     }
 }

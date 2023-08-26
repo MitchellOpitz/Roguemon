@@ -5,6 +5,7 @@ public class Enemy : MonoBehaviour
     public float health = 100f;     // Current health of the enemy
     public float baseMoveSpeed = 3f;    // Speed at which the enemy moves
     public bool isSlowed;
+    private float damageMultipler;
 
     public float currentMoveSpeed;
 
@@ -36,13 +37,25 @@ public class Enemy : MonoBehaviour
     {
         currentMoveSpeed = baseMoveSpeed;
         isSlowed = false;
-        Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
+        // Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
     }
 
     public void UpdateMoveSpeed(float multiplier)
     {
         currentMoveSpeed = baseMoveSpeed - (baseMoveSpeed * multiplier);
         isSlowed = true;
-        Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
+        // Debug.Log("Updating enemy move speed.  New value: " + currentMoveSpeed);
+    }
+
+    public void ResetDamageMultiplier()
+    {
+        damageMultipler = 1;
+        // Debug.Log("Updating enemy damage multiplier.  New value: " + damageMultipler);
+    }
+
+    public void UpdateDamageMultiplier(float multiplier)
+    {
+        damageMultipler = 1 + multiplier;
+        Debug.Log("Updating enemy damage multiplier.  New value: " + damageMultipler);
     }
 }
