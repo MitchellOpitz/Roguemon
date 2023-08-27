@@ -49,37 +49,37 @@ public class DetectNearbyEnemies : MonoBehaviour
     public void ResetSlowMultiplier()
     {
         slowMultiplier = 0;
-        Debug.Log("Update slow multiplier.  New value: " + slowMultiplier);
+        // Debug.Log("Update slow multiplier.  New value: " + slowMultiplier);
     }
 
     public void UpdateSlowMultiplier(float multiplier)
     {
         slowMultiplier = multiplier;
-        Debug.Log("Update slow multiplier.  New value: " + slowMultiplier);
+        // Debug.Log("Update slow multiplier.  New value: " + slowMultiplier);
     }
 
     public void ResetDamageMultiplier()
     {
         damageMultiplier = 0;
-        Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
+        // Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
     }
 
     public void UpdateDamageMultiplier(float multiplier)
     {
         damageMultiplier = multiplier;
-        Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
+        // Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
     }
 
     public void ResetPushbackChance()
     {
         pushbackChance = 0;
-        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+        // Debug.Log("Update pushback chance.  New value: " + pushbackChance);
     }
 
     public void UpdatePushbackChance(float multiplier)
     {
         pushbackChance = multiplier;
-        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+        // Debug.Log("Update pushback chance.  New value: " + pushbackChance);
     }
 
     public bool CheckPushback()

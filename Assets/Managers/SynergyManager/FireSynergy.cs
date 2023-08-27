@@ -15,6 +15,12 @@ public class FireSynergy : Synergy
 
         // Implement your logic to apply the burn effect to enemies on hit
         // You can access the damage calculations for your allies' attacks and add the burn damage over time effect.
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<Pet>().UpdateFireMultipler(damageMultiplier);
+        }
     }
 
     private float GetDamageMultiplier(int requiredCount)

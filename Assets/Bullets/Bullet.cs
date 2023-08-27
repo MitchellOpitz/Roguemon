@@ -4,6 +4,8 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;   // Speed of the bullet
     public float damage = 10f;  // Damage dealt to the target
+    public bool isFlaming;
+    public float fireMultiplier;
 
     private Transform target;   // The target to hit
 
@@ -53,6 +55,10 @@ public class Bullet : MonoBehaviour
         if (enemy != null)
         {
             enemy.TakeDamage(damage);
+            if (isFlaming)
+            {
+                enemy.ApplyBurnEffect(damage, fireMultiplier);
+            }
         }
 
         Destroy(gameObject); // Destroy the bullet
@@ -82,5 +88,12 @@ public class Bullet : MonoBehaviour
 
             target = nearestEnemy.transform;
         }
+    }
+
+    public void AddBurnEffect(float multiplier)
+    {
+        Debug.Log("Burn effect added to bullet.");
+        isFlaming = true;
+        fireMultiplier = multiplier;
     }
 }

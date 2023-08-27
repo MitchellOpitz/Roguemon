@@ -24,6 +24,7 @@ public class Pet : MonoBehaviour
     private float manaGainPerAttack;
     private int currentMaxHealth;
     private bool isInvulnerable;
+    private float fireMultiplier;
 
     private void Start()
     {
@@ -75,7 +76,11 @@ public class Pet : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
-
+            if ((type1 == PetType.Fire || type2 == PetType.Fire) && fireMultiplier > 0)
+            {
+                Debug.Log("Fire type detected.  Applying burn effect.");
+                bulletComponent.AddBurnEffect(fireMultiplier);
+            }
             if (bulletComponent != null)
             {
                 bulletComponent.SetTarget(target.transform);
@@ -191,6 +196,18 @@ public class Pet : MonoBehaviour
     {
         currentMaxHealth = (int)(baseMaxHealth * (1 + multiplier));
         // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
+    }
+
+    public void ResetFireMultiplier()
+    {
+        fireMultiplier = 0;
+        Debug.Log("Updating fire multiplier.  New value: " + fireMultiplier);
+    }
+
+    public void UpdateFireMultipler(float multiplier)
+    {
+        fireMultiplier = multiplier;
+        Debug.Log("Updating fire multiplier.  New value: " + fireMultiplier);
     }
 
     private void SteelSynergyCheck()
