@@ -208,6 +208,9 @@ public class SynergyManager : MonoBehaviour
 
             // Fairy
             FindAnyObjectByType<FountainManager>().StopSpawningFountains();
+
+            // Ghost
+            pet.GetComponent<DetectNearbyEnemies>().ResetPushbackChance();
         }
     }
 }

@@ -6,11 +6,13 @@ public class DetectNearbyEnemies : MonoBehaviour
     public float detectionRadius = 5f; // Radius to detect nearby enemies
     private float slowMultiplier;
     private float damageMultiplier;
+    private float pushbackChance;
 
     private void Start()
     {
         ResetSlowMultiplier();
         ResetDamageMultiplier();
+        ResetPushbackChance();
     }
 
     private void Update()
@@ -66,5 +68,24 @@ public class DetectNearbyEnemies : MonoBehaviour
     {
         damageMultiplier = multiplier;
         Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
+    }
+
+    public void ResetPushbackChance()
+    {
+        pushbackChance = 0;
+        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+    }
+
+    public void UpdatePushbackChance(float multiplier)
+    {
+        pushbackChance = multiplier;
+        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+    }
+
+    public bool CheckPushback()
+    {
+        Debug.Log("Checking for pushback.");
+        float randomValue = Random.Range(0f, 1f);
+        return randomValue < pushbackChance;
     }
 }

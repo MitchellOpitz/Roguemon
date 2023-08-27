@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Pet : MonoBehaviour
 {
@@ -50,6 +51,7 @@ public class Pet : MonoBehaviour
     {
         // Calculate actual damage considering defense
         int actualDamage = Mathf.Max(0, damage - defense);
+        CheckPushback();
         currentHealth -= actualDamage;
 
         if (currentHealth <= 0)
@@ -128,6 +130,37 @@ public class Pet : MonoBehaviour
         }
         return null; // Return null if no enemies found
     }
+
+    private IEnumerator PushbackEnemyOverTime(Enemy enemy, Vector3 initialPosition, Vector3 pushbackDirection, float pushbackDistance, float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float t = elapsedTime / duration;
+            Vector3 newPosition = Vector3.Lerp(initialPosition, initialPosition + pushbackDirection * pushbackDistance, t);
+            enemy.transform.position = newPosition;
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    private void CheckPushback()
+    {
+        if (GetComponent<DetectNearbyEnemies>().CheckPushback())
+        {
+            Debug.Log("Pushing enemy back.");
+            Enemy enemy = FindClosestEnemy().GetComponent<Enemy>();
+            Vector3 enemyMoveDirection = -enemy.transform.forward; // Move in the opposite direction the enemy is facing
+            float pushbackDistance = 5f;
+            float pushbackDuration = 0.25f; // Duration of the pushback
+
+            Vector3 enemyInitialPosition = enemy.transform.position;
+
+            StartCoroutine(PushbackEnemyOverTime(enemy, enemyInitialPosition, enemyMoveDirection, pushbackDistance, pushbackDuration));
+        }
+    }
+
 
     public void ResetManaGain()
     {
