@@ -205,6 +205,9 @@ public class SynergyManager : MonoBehaviour
 
             // Psychic
             pet.GetComponent<DetectNearbyEnemies>().ResetDamageMultiplier();
+
+            // Fairy
+            FindAnyObjectByType<FountainManager>().StopSpawningFountains();
         }
     }
 }
