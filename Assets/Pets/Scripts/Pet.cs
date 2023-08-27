@@ -15,6 +15,7 @@ public class Pet : MonoBehaviour
     public float currentMana;
     public float baseManaGainPerAttack;
     public GameObject bulletPrefab;
+    public SpecialAbility specialAbility;
 
 
     private float attackCooldown = 2f;
@@ -99,7 +100,7 @@ public class Pet : MonoBehaviour
     public void CastSpecial()
     {
         // Cast the special ability using accumulated mana
-        // specialAbility.Activate(this);
+        specialAbility.Activate(this);
         currentMana = 0;
     }
 
