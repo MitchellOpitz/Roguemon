@@ -5,10 +5,14 @@ public class DetectNearbyEnemies : MonoBehaviour
     public LayerMask enemyLayer; // Layer mask to specify which objects are considered enemies
     public float detectionRadius = 5f; // Radius to detect nearby enemies
     private float slowMultiplier;
+    private float damageMultiplier;
+    private float pushbackChance;
 
     private void Start()
     {
         ResetSlowMultiplier();
+        ResetDamageMultiplier();
+        ResetPushbackChance();
     }
 
     private void Update()
@@ -20,9 +24,17 @@ public class DetectNearbyEnemies : MonoBehaviour
         foreach (Collider enemyCollider in nearbyEnemies)
         {
             Enemy enemy = enemyCollider.GetComponent<Enemy>();
+
+            // Ice synergy
             if (enemy != null && !enemy.isSlowed)
             {
                 enemy.UpdateMoveSpeed(slowMultiplier);
+            }
+
+            // Psychic synergy
+            if (enemy != null)
+            {
+                enemy.UpdateDamageMultiplier(damageMultiplier);
             }
         }
     }
@@ -44,5 +56,36 @@ public class DetectNearbyEnemies : MonoBehaviour
     {
         slowMultiplier = multiplier;
         Debug.Log("Update slow multiplier.  New value: " + slowMultiplier);
+    }
+
+    public void ResetDamageMultiplier()
+    {
+        damageMultiplier = 0;
+        Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
+    }
+
+    public void UpdateDamageMultiplier(float multiplier)
+    {
+        damageMultiplier = multiplier;
+        Debug.Log("Update damage multiplier.  New value: " + damageMultiplier);
+    }
+
+    public void ResetPushbackChance()
+    {
+        pushbackChance = 0;
+        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+    }
+
+    public void UpdatePushbackChance(float multiplier)
+    {
+        pushbackChance = multiplier;
+        Debug.Log("Update pushback chance.  New value: " + pushbackChance);
+    }
+
+    public bool CheckPushback()
+    {
+        // Debug.Log("Checking for pushback.");
+        float randomValue = Random.Range(0f, 1f);
+        return randomValue < pushbackChance;
     }
 }

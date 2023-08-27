@@ -16,6 +16,12 @@ public class PsychicSynergy : Synergy
         // Implement your logic to increase damage dealt to nearby enemies
         // For example, you could increase the damage dealt by a certain percentage
         // to enemies within a certain radius of the pets with this synergy.
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            pet.GetComponent<DetectNearbyEnemies>().UpdateDamageMultiplier(damageIncrease);
+        }
     }
 
     private float GetDamageIncreasePercentage(int requiredCount)

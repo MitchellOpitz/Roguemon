@@ -567,6 +567,52 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bd1d07dcfd86a1e429dc772845de5b8d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &625144392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 625144393}
+  - component: {fileID: 625144394}
+  m_Layer: 0
+  m_Name: FountainManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &625144393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625144392}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1428711024}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &625144394
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 625144392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ba684641fe330cc4babaa09411abf4b3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  healingFountainPrefab: {fileID: 2418378075648518232, guid: b9c97df544fc286408f17784428841de, type: 3}
+  spawnInterval: 10
 --- !u!1 &701355806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1085,6 +1131,46 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1428711024}
     m_Modifications:
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].description
+      value: This is a test description for Hurtthrob.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].upgradeName
+      value: Hurtthrob
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].description
+      value: This is a test description for Backsplash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].upgradeName
+      value: Backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].description
+      value: This is a test description for Chillenger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].upgradeName
+      value: Chillenger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].newPetPrefab
+      value: 
+      objectReference: {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].newPetPrefab
+      value: 
+      objectReference: {fileID: 2961623156242086183, guid: e4887ed4ad654d84ba83063f21ed8aea, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].newPetPrefab
+      value: 
+      objectReference: {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
     - target: {fileID: 5590192412043527014, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: m_Name
       value: UpgradesManager
@@ -2337,6 +2423,7 @@ Transform:
   - {fileID: 1105482566}
   - {fileID: 1712694858}
   - {fileID: 1021311799}
+  - {fileID: 625144393}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456655874
