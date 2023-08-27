@@ -84,7 +84,7 @@ public class DetectNearbyEnemies : MonoBehaviour
 
     public bool CheckPushback()
     {
-        Debug.Log("Checking for pushback.");
+        // Debug.Log("Checking for pushback.");
         float randomValue = Random.Range(0f, 1f);
         return randomValue < pushbackChance;
     }
