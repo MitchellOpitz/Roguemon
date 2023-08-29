@@ -6,12 +6,16 @@ public class Follow : MonoBehaviour
     public float followDistance = 2f; // Distance between pets
     private float baseMoveSpeed;
     private float currentMoveSpeed;
+    private Animator _animator; // Reference to Animation controller
 
     private void Start()
     {
         // Get the move speed from the attached PlayerMovement component
+
         baseMoveSpeed = GetComponent<PlayerMovement>().baseMoveSpeed;
         ResetSpeed();
+        //Get the Animation controller on start
+        _animator = GetComponentInChildren<Animator>(); 
     }
 
     private void Update()
@@ -20,6 +24,14 @@ public class Follow : MonoBehaviour
         {
             // Calculate the position behind the target pet
             Vector3 targetPosition = target.position - target.forward * followDistance;
+
+            // Toggle walk animation
+            if (transform.position != targetPosition) {
+                _animator.SetBool("isWalking", true);
+            }
+            else {
+                _animator.SetBool("isWalking", false);
+            }
 
             // Calculate the desired position for smooth movement
             Vector3 desiredPosition = targetPosition;
