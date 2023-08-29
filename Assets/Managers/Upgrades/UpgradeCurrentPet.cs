@@ -33,9 +33,9 @@ public class UpgradeCurrentPet : Upgrade
         switch (statToUpgrade)
         {
             case StatToUpgrade.Health:
-                pet.maxHealth += amount;
+                pet.baseMaxHealth += amount;
                 Debug.Log("Pet " + pet.name + " upgraded.");
-                Debug.Log("New health: " + pet.maxHealth);
+                Debug.Log("New health: " + pet.baseMaxHealth);
                 break;
             case StatToUpgrade.Attack:
                 pet.attack += amount;

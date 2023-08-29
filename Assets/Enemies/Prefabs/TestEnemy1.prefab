@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2295816593163404456}
   - component: {fileID: 7426874169116348492}
   - component: {fileID: -5386957343421392080}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: TestEnemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -120,7 +120,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
-  moveSpeed: 1
+  baseMoveSpeed: 3
+  isSlowed: 0
+  currentMoveSpeed: 0
   type: Enemy type 1
 --- !u!114 &-5386957343421392080
 MonoBehaviour:

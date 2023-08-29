@@ -44,6 +44,7 @@ public class SynergyManager : MonoBehaviour
         // Clear type count dictionary
         typeCount.Clear();
         Debug.Log("Clearing type count.");
+        ResetSynergies();
 
         // Count the number of each type in the party
         foreach (GameObject pet in party)
@@ -80,6 +81,9 @@ public class SynergyManager : MonoBehaviour
             if (typeCount.ContainsKey(synergyType))
             {
                 typeCount[synergyType] += bonusValue;
+            } else
+            {
+                typeCount.Add(synergyType, bonusValue);
             }
         }
 
@@ -90,9 +94,76 @@ public class SynergyManager : MonoBehaviour
             {
                 if (petCountOfType >= synergy.requiredCount)
                 {
-                    Debug.Log("Synergy activated: " + synergy.synergyName);
+                    Debug.Log("Activating: " + synergy.requiredType + " " + synergy.requiredCount);
+                    ApplySynergyBonus(synergy.requiredType, synergy.requiredCount);
                 }
             }
+        }
+    }
+
+    private void ApplySynergyBonus(PetType requiredType, int requiredCount)
+    {
+        switch (requiredType)
+        {
+            case PetType.Fighting:
+                FightingSynergy fightingSynergy = new FightingSynergy(requiredCount);
+                fightingSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Steel:
+                SteelSynergy steelSynergy = new SteelSynergy(requiredCount);
+                steelSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Electric:
+                ElectricSynergy electricSynergy = new ElectricSynergy(requiredCount);
+                electricSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Ground:
+                GroundSynergy groundSynergy = new GroundSynergy(requiredCount);
+                groundSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Water:
+                WaterSynergy waterSynergy = new WaterSynergy(requiredCount);
+                waterSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Poison:
+                PoisonSynergy poisonSynergy = new PoisonSynergy(requiredCount);
+                poisonSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Fairy:
+                FairySynergy fairySynergy = new FairySynergy(requiredCount);
+                fairySynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Psychic:
+                PsychicSynergy psychicSynergy = new PsychicSynergy(requiredCount);
+                psychicSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Ghost:
+                GhostSynergy ghostSynergy = new GhostSynergy(requiredCount);
+                ghostSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Ice:
+                IceSynergy iceSynergy = new IceSynergy(requiredCount);
+                iceSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Wind:
+                WindSynergy windSynergy = new WindSynergy(requiredCount);
+                windSynergy.ApplySynergyBonus();
+                break;
+
+            case PetType.Fire:
+                FireSynergy fireSynergy = new FireSynergy(requiredCount);
+                fireSynergy.ApplySynergyBonus();
+                break;
         }
     }
 
@@ -108,9 +179,38 @@ public class SynergyManager : MonoBehaviour
             permanentSynergyBonuses.Add(synergyType, 1);
         }
 
-        Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
-        Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
+        // Debug.Log("Permanent synergy bonus applied: " + synergyType + " +1.");
+        // Debug.Log("New value of " + synergyType + " is: " + permanentSynergyBonuses[synergyType]);
 
         UpdateSynergies(PartyManager.Instance.party);
+    }
+
+    private void ResetSynergies()
+    {
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            // Wind
+            pet.GetComponent<PlayerMovement>().ResetSpeed();
+            pet.GetComponent<Follow>().ResetSpeed();
+
+            // Water
+            pet.GetComponent<Pet>().ResetManaGain();
+
+            // Ground
+            pet.GetComponent<Pet>().ResetMaxHealth();
+
+            // Ground
+            pet.GetComponent<DetectNearbyEnemies>().ResetSlowMultiplier();
+
+            // Psychic
+            pet.GetComponent<DetectNearbyEnemies>().ResetDamageMultiplier();
+
+            // Fairy
+            FindAnyObjectByType<FountainManager>().StopSpawningFountains();
+
+            // Ghost
+            pet.GetComponent<DetectNearbyEnemies>().ResetPushbackChance();
+        }
     }
 }
