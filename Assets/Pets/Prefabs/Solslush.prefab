@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1660904619282021544
+--- !u!1 &3141846721791014601
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,43 +8,43 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5455857524346610889}
-  - component: {fileID: 3275978231583826259}
-  - component: {fileID: 3685421429225130783}
-  - component: {fileID: 4321661972748551386}
-  - component: {fileID: 6789216165684021130}
-  - component: {fileID: 3775586099080219343}
-  - component: {fileID: 113271757686667391}
+  - component: {fileID: 2048115209755911009}
+  - component: {fileID: 1587420405849645729}
+  - component: {fileID: 1633152986032746444}
+  - component: {fileID: 5824203631391073626}
+  - component: {fileID: 146727398510935944}
+  - component: {fileID: 7981452539186927740}
+  - component: {fileID: 3827891586485874121}
   m_Layer: 0
-  m_Name: Steelmelt
+  m_Name: Solslush
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5455857524346610889
+--- !u!4 &2048115209755911009
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 1626770444678829825}
+  - {fileID: 4763498916821688228}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!136 &3275978231583826259
+--- !u!136 &1587420405849645729
 CapsuleCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   m_Material: {fileID: 0}
   m_IncludeLayers:
     serializedVersion: 2
@@ -61,13 +61,13 @@ CapsuleCollider:
   m_Height: 2
   m_Direction: 1
   m_Center: {x: 0, y: 1, z: 0}
---- !u!54 &3685421429225130783
+--- !u!54 &1633152986032746444
 Rigidbody:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   serializedVersion: 4
   m_Mass: 1
   m_Drag: 0
@@ -88,39 +88,39 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &4321661972748551386
+--- !u!114 &5824203631391073626
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9cc3ff2385dcc243b80567046553337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
---- !u!114 &6789216165684021130
+--- !u!114 &146727398510935944
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e1cf216e4ac9af9469f96ee5b90773cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   damageAmount: 100
---- !u!114 &3775586099080219343
+--- !u!114 &7981452539186927740
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0e19bef6d3462fa4ca7ed30f6366cd93, type: 3}
@@ -128,21 +128,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   followDistance: 1.5
---- !u!114 &113271757686667391
+--- !u!114 &3827891586485874121
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1660904619282021544}
+  m_GameObject: {fileID: 3141846721791014601}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a8f05ad4d1161cb46807a833382d0e71, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  petName: Steelmelt
-  type1: 11
-  type2: 2
+  petName: Solslush
+  type1: 10
+  type2: 5
   petClass: 0
   maxHealth: 100
   currentHealth: 0
@@ -152,59 +152,59 @@ MonoBehaviour:
   currentMana: 0
   manaGainPerAttack: 10
   bulletPrefab: {fileID: 5364989974890306649, guid: 74c815e04ff6e854c85c6b5cbc793783, type: 3}
---- !u!1001 &1232238507273154794
+--- !u!1001 &5013034681937967183
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 5455857524346610889}
+    m_TransformParent: {fileID: 2048115209755911009}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalRotation.x
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 180
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: 919132149155446097, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_Name
-      value: Steelmelt FBX
+      value: Solslush FBX
       objectReference: {fileID: 0}
-    - target: {fileID: 7496614780543081215, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - target: {fileID: 5143091905899232846, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 46cb9dc55671c3c4ebb23bbd6b4a44c2, type: 2}
@@ -212,28 +212,28 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 7867678423292493077}
-  m_SourcePrefab: {fileID: 100100000, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
---- !u!4 &1626770444678829825 stripped
+      addedObject: {fileID: 2513741389568681430}
+  m_SourcePrefab: {fileID: 100100000, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
+--- !u!4 &4763498916821688228 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
-  m_PrefabInstance: {fileID: 1232238507273154794}
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
+  m_PrefabInstance: {fileID: 5013034681937967183}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2150648820602490299 stripped
+--- !u!1 &5282873727278449950 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 86852e932a5dca04cacc2bbb214f4163, type: 3}
-  m_PrefabInstance: {fileID: 1232238507273154794}
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 90ce83c1d22961b4bb85149fedea8c9e, type: 3}
+  m_PrefabInstance: {fileID: 5013034681937967183}
   m_PrefabAsset: {fileID: 0}
---- !u!95 &7867678423292493077
+--- !u!95 &2513741389568681430
 Animator:
   serializedVersion: 5
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2150648820602490299}
+  m_GameObject: {fileID: 5282873727278449950}
   m_Enabled: 1
   m_Avatar: {fileID: 9000000, guid: 261a01cef0abf64499ae578c9bb749a0, type: 3}
   m_Controller: {fileID: 9100000, guid: b218f5ead70f45b48ad68278f94b779c, type: 2}
