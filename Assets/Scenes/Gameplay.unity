@@ -4041,6 +4041,58 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1428711024}
     m_Modifications:
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.size
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].description
+      value: This is a test description for Spiritsieve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].upgradeName
+      value: Spiritsieve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].description
+      value: This is a test description for Steelmelt.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].upgradeName
+      value: Steelmelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].description
+      value: This is a test description for Voltephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].upgradeName
+      value: Voltephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].description
+      value: This is a test description for Yaypalmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].upgradeName
+      value: Yaypalmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].newPetPrefab
+      value: 
+      objectReference: {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: d72b3960ed69da7418de7025cbc71b3c, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].newPetPrefab
+      value: 
+      objectReference: {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
     - target: {fileID: 5590192412043527014, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: m_Name
       value: UpgradesManager
