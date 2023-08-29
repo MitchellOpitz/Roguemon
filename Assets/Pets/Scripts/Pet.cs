@@ -16,6 +16,7 @@ public class Pet : MonoBehaviour
     public float baseManaGainPerAttack;
     public GameObject bulletPrefab;
     public SpecialAbility specialAbility;
+    public int electricBounces;
 
 
     private float attackCooldown = 2f;
@@ -84,6 +85,11 @@ public class Pet : MonoBehaviour
             if (bulletComponent != null)
             {
                 bulletComponent.SetTarget(target.transform);
+            }
+            if ((type1 == PetType.Electric || type2 == PetType.Electric))
+            {
+                bulletComponent.electricBounces = electricBounces;
+                bulletComponent.isElectric = true;
             }
 
             GainMana(manaGainPerAttack);
