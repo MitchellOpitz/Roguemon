@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Pet : MonoBehaviour
 {
@@ -18,6 +19,7 @@ public class Pet : MonoBehaviour
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
     private PartyManager partyManager;
+    private Animator _animator;
 
     private void Start()
     {
@@ -27,6 +29,9 @@ public class Pet : MonoBehaviour
 
         // Get reference to PartyManager
         partyManager = FindAnyObjectByType<PartyManager>();
+
+        //Get the Animation controller on start
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -61,6 +66,7 @@ public class Pet : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            _animator.SetTrigger("creatureAttack");
 
             if (bulletComponent != null)
             {
@@ -92,9 +98,11 @@ public class Pet : MonoBehaviour
 
     public void Die()
     {
-        // Handle pet's death
-        partyManager.PetDied(gameObject);
-        Destroy(gameObject);
+        // Handle pet's death animation
+        _animator.SetTrigger("creatureDeath");
+        // Trigger death cleanup after animation plays
+        StartCoroutine(PetDeathCleanup());
+
     }
 
     private GameObject FindClosestEnemy()
@@ -122,5 +130,11 @@ public class Pet : MonoBehaviour
             return nearestEnemy;
         }
         return null; // Return null if no enemies found
+    }
+
+    IEnumerator PetDeathCleanup() {
+        yield return new WaitForSeconds(0.5f);
+        partyManager.PetDied(gameObject);
+        Destroy(gameObject);
     }
 }
