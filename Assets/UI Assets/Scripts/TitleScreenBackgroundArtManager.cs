@@ -5,7 +5,6 @@ using Unity.VisualScripting;
 
 public class TitleScreenBackgroundArtManager : MonoBehaviour
 {
-
     [SerializeField]
     private RectTransform lightPinkEntranceBlock;
     [SerializeField]
@@ -59,11 +58,11 @@ public class TitleScreenBackgroundArtManager : MonoBehaviour
         buttonsOnScreen= false;
         titleTransitionCompelte = false;
         lightPinkEntranceBlock.sizeDelta = new Vector2(10, 10);
-        lightPinkEntranceBlock.position = new Vector2(-1200,0);
+        lightPinkEntranceBlock.anchoredPosition = new Vector2(-1200,0);
         ditheredBackgroundArt.sizeDelta = new Vector2(canvasWidth * 1.2f, canvasHeight * 1.2f);
-        ditheredBackgroundArt.position = new Vector2(0, -1300);
-        titleScreenButtonPanel.position = new Vector2(-1500, 0);
-        titleTextbox.position = new Vector2(0, 1000);
+        ditheredBackgroundArt.anchoredPosition = new Vector2(0, -1300);
+        titleScreenButtonPanel.anchoredPosition = new Vector2(-1500, 0);
+        titleTextbox.anchoredPosition = new Vector2(0, 1000);
         StartCoroutine(LightPinkEntrance(lightPinkEntranceDelay));
         StartCoroutine(LightPinkHorizontalStretch(lightPinkHorizontalStartDelay));
         StartCoroutine(LightPinkVerticalStretch(lightPinkVerticalStartDelay));
