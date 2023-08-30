@@ -6,6 +6,8 @@ public class Bullet : MonoBehaviour
     public float damage = 10f;  // Damage dealt to the target
     public bool isFlaming;
     public float fireMultiplier;
+    public bool isPoison;
+    public float poisonDamage;
     public bool isElectric;
     public float electricBounces;
     public Enemy electricOriginalTarget = null;
@@ -62,6 +64,11 @@ public class Bullet : MonoBehaviour
             if (isFlaming)
             {
                 enemy.ApplyBurnEffect(damage, fireMultiplier);
+            }
+
+            if (isPoison)
+            {
+                enemy.ApplyPoisonEffect(damage, poisonDamage);
             }
 
             if (isElectric)
@@ -144,5 +151,12 @@ public class Bullet : MonoBehaviour
         Debug.Log("Burn effect added to bullet.");
         isFlaming = true;
         fireMultiplier = multiplier;
+    }
+
+    public void AddPoisonEffect(float multiplier)
+    {
+        Debug.Log("Poison effect added to bullet.");
+        isPoison = true;
+        poisonDamage = multiplier;
     }
 }

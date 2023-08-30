@@ -18,6 +18,7 @@ public class Pet : MonoBehaviour
     public SpecialAbility specialAbility;
     public int electricBounces;
     public float fightingMultiplier;
+    public float poisonDamage;
 
 
     private float attackCooldown = 2f;
@@ -95,6 +96,11 @@ public class Pet : MonoBehaviour
             {
                 bulletComponent.electricBounces = electricBounces;
                 bulletComponent.isElectric = true;
+            }
+            if ((type1 == PetType.Poison || type2 == PetType.Poison) && poisonDamage > 0)
+            {
+                Debug.Log("Poison type detected.  Applying Poison effect.");
+                bulletComponent.AddPoisonEffect(poisonDamage);
             }
 
             GainMana(manaGainPerAttack);
@@ -231,6 +237,18 @@ public class Pet : MonoBehaviour
     {
         fightingMultiplier = multiplier;
         Debug.Log("Updating fighting multiplier.  New value: " + fightingMultiplier);
+    }
+
+    public void ResetPoisonDamage()
+    {
+        poisonDamage = 0;
+        Debug.Log("Updating poison damage.  New value: " + poisonDamage);
+    }
+
+    public void UpdatePoisonDamage(float multiplier)
+    {
+        poisonDamage = multiplier;
+        Debug.Log("Updating poison damage.  New value: " + poisonDamage);
     }
 
     private void SteelSynergyCheck()

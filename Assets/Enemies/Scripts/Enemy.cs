@@ -88,4 +88,33 @@ public class Enemy : MonoBehaviour
             yield return null;
         }
     }
+    public void ApplyPoisonEffect(float damage, float damageMultiplier)
+    {
+        // Debug.Log("Poison effect activated.");
+        float poisonDuration = 3f; // Duration of burn effect
+        float poisonDamage = damage * damageMultiplier; // Calculate burn damage
+
+        // Apply the burn effect to the enemy
+        ApplyPoison(poisonDamage, poisonDuration);
+    }
+
+    public void ApplyPoison(float poisonDamage, float duration)
+    {
+        // Debug.Log("Burn effect started.");
+        StartCoroutine(PoisonOverTime(poisonDamage, duration));
+    }
+
+    private IEnumerator PoisonOverTime(float poisonDamage, float duration)
+    {
+        float elapsedTime = 0f;
+
+        while (elapsedTime < duration)
+        {
+            float damageThisFrame = poisonDamage * Time.deltaTime;
+            // Debug.Log("Poison damage taken: " + damageThisFrame);
+            TakeDamage(damageThisFrame);
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+    }
 }
