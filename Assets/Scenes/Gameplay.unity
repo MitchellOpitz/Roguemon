@@ -365,6 +365,11 @@ MonoBehaviour:
   maxX: 9.5
   minZ: -11
   maxZ: 7
+--- !u!4 &405459068 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+  m_PrefabInstance: {fileID: 4338721533285689756}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &477379231
 GameObject:
   m_ObjectHideFlags: 0
@@ -1123,7 +1128,234 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 901688838}
   m_CullTransparentMesh: 1
---- !u!4 &909686865 stripped
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1428711024}
+    m_Modifications:
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].description
+      value: This is a test description for Backsplash.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].upgradeName
+      value: Backsplash
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].description
+      value: This is a test description for Chillenger.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].upgradeName
+      value: Chillenger
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].description
+      value: This is a test description for Hurtthrob.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].upgradeName
+      value: Hurtthrob
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[3].description
+      value: This is a test description for Infearno.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[3].upgradeName
+      value: Infearno
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[4].description
+      value: This is a test description for McZappy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[4].upgradeName
+      value: McZappy
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[5].description
+      value: This is a test description for Razorwing.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[5].upgradeName
+      value: Razorwing
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[6].description
+      value: This is a test description for Sadgegiver.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[6].upgradeName
+      value: Sadgegiver
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[7].description
+      value: This is a test description for Sala Bim.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[7].upgradeName
+      value: Sala Bim
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[8].description
+      value: This is a test description for Shivice.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[8].upgradeName
+      value: Shivice
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].description
+      value: This is a test description for Solslush.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].upgradeName
+      value: Solslush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].newPetPrefab
+      value: 
+      objectReference: {fileID: 2961623156242086183, guid: e4887ed4ad654d84ba83063f21ed8aea, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].description
+      value: This is a test description for Spiritsieve.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].upgradeName
+      value: Spiritsieve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].description
+      value: This is a test description for Steelmelt.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].upgradeName
+      value: Steelmelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].description
+      value: This is a test description for Voltephant.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].upgradeName
+      value: Voltephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].description
+      value: This is a test description for Yaypalmer.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].upgradeName
+      value: Yaypalmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].newPetPrefab
+      value: 
+      objectReference: {fileID: 1827771176708831673, guid: 1b592b80ae0ba1547a454bc1ae94f56e, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].newPetPrefab
+      value: 
+      objectReference: {fileID: 9058452458494216971, guid: fc000d4a0b2116e469be6d33bdeeb2c4, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[3].newPetPrefab
+      value: 
+      objectReference: {fileID: 6001932149823993158, guid: 0467817ece531344783e75c5e38fa496, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[4].newPetPrefab
+      value: 
+      objectReference: {fileID: 7090435994259968531, guid: a2d8b19cc894c2e4087fd829938d4943, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[5].newPetPrefab
+      value: 
+      objectReference: {fileID: 1102047040050780628, guid: 9e146f60d78edd04ea0ed91da80f06a4, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[6].newPetPrefab
+      value: 
+      objectReference: {fileID: 8383682260009015342, guid: 61204c46c1a0e85408605c1cdbff37ca, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[7].newPetPrefab
+      value: 
+      objectReference: {fileID: 1693745641299103208, guid: 1e959848002f2be458c1f64453da8096, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[8].newPetPrefab
+      value: 
+      objectReference: {fileID: 3141846721791014601, guid: 0f2a15b119420564ab612e60a3fbcd27, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].newPetPrefab
+      value: 
+      objectReference: {fileID: 3141846721791014601, guid: a12f0c3343f5923448e51149f6a8fd12, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].newPetPrefab
+      value: 
+      objectReference: {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: d72b3960ed69da7418de7025cbc71b3c, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].newPetPrefab
+      value: 
+      objectReference: {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
+    - target: {fileID: 5590192412043527014, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_Name
+      value: UpgradesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
 Transform:
   m_CorrespondingSourceObject: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
   m_PrefabInstance: {fileID: 1724859645}
@@ -2327,6 +2559,7 @@ Transform:
   - {fileID: 1712694858}
   - {fileID: 909686865}
   - {fileID: 625144393}
+  - {fileID: 405459068}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1456655874
@@ -4181,6 +4414,127 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b456c81be8c6bde4c878857c055e6071, type: 3}
+--- !u!1001 &4338721533285689756
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1428711024}
+    m_Modifications:
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.size
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].description
+      value: This is a test description for Solslush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].upgradeName
+      value: Solslush
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].description
+      value: This is a test description for Spiritsieve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].upgradeName
+      value: Spiritsieve
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].description
+      value: This is a test description for Steelmelt.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].upgradeName
+      value: Steelmelt
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].description
+      value: This is a test description for Voltephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].upgradeName
+      value: Voltephant
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].description
+      value: This is a test description for Yaypalmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].upgradeName
+      value: Yaypalmer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[9].newPetPrefab
+      value: 
+      objectReference: {fileID: 3141846721791014601, guid: a12f0c3343f5923448e51149f6a8fd12, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[10].newPetPrefab
+      value: 
+      objectReference: {fileID: 6071168354083149949, guid: 624b4979df2fc44459f8d763bad0eb0e, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[11].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: d72b3960ed69da7418de7025cbc71b3c, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[12].newPetPrefab
+      value: 
+      objectReference: {fileID: 525913772426896218, guid: fc18a33232a5c804e9230ac062f3e255, type: 3}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[13].newPetPrefab
+      value: 
+      objectReference: {fileID: 1660904619282021544, guid: 6e3e080e2d0b4dc4d88f1328ef19a21f, type: 3}
+    - target: {fileID: 5590192412043527014, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_Name
+      value: UpgradesManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8947067667675594931, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
 --- !u!1001 &5823120100834935478
 PrefabInstance:
   m_ObjectHideFlags: 0

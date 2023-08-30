@@ -24,6 +24,7 @@ public class Pet : MonoBehaviour
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
     private PartyManager partyManager;
+    private Animator _animator;
     private float manaGainPerAttack;
     private int currentMaxHealth;
     private bool isInvulnerable;
@@ -42,6 +43,9 @@ public class Pet : MonoBehaviour
 
         // Get reference to PartyManager
         partyManager = FindAnyObjectByType<PartyManager>();
+
+        //Get the Animation controller on start
+        _animator = GetComponentInChildren<Animator>();
     }
 
     private void Update()
@@ -88,6 +92,8 @@ public class Pet : MonoBehaviour
                 Debug.Log("Fire type detected.  Applying burn effect.");
                 bulletComponent.AddBurnEffect(fireMultiplier);
             }
+            _animator.SetTrigger("creatureAttack");
+
             if (bulletComponent != null)
             {
                 bulletComponent.SetTarget(target.transform);
@@ -128,9 +134,11 @@ public class Pet : MonoBehaviour
 
     public void Die()
     {
-        // Handle pet's death
-        partyManager.PetDied(gameObject);
-        Destroy(gameObject);
+        // Handle pet's death animation
+        _animator.SetTrigger("creatureDeath");
+        // Trigger death cleanup after animation plays
+        StartCoroutine(PetDeathCleanup());
+
     }
 
     private GameObject FindClosestEnemy()
@@ -160,6 +168,12 @@ public class Pet : MonoBehaviour
         return null; // Return null if no enemies found
     }
 
+    IEnumerator PetDeathCleanup() {
+        yield return new WaitForSeconds(0.5f);
+        partyManager.PetDied(gameObject);
+        Destroy(gameObject);
+    }
+    
     private IEnumerator PushbackEnemyOverTime(Enemy enemy, Vector3 initialPosition, Vector3 pushbackDirection, float pushbackDistance, float duration)
     {
         float elapsedTime = 0f;
@@ -286,5 +300,4 @@ public class Pet : MonoBehaviour
         isInvulnerable = false;
         Debug.Log("Removing invulnerability.");
     }
-
 }
