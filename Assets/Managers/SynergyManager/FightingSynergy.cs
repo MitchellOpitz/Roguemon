@@ -14,6 +14,17 @@ public class FightingSynergy : Synergy
         float damageMultiplier = GetDamageMultiplier(requiredCount);
         // Apply the damage multiplier to the contact damage of pets
         // For example, increase the pet's contact damage by damageMultiplier
+
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            Pet pet_ = pet.GetComponent<Pet>();
+            if (pet_.type1 == PetType.Fighting || pet_.type2 == PetType.Fighting)
+            {
+                pet_.fightingMultiplier = damageMultiplier;
+            }
+        }
     }
 
     private float GetDamageMultiplier(int requiredCount)

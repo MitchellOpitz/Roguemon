@@ -17,6 +17,7 @@ public class Pet : MonoBehaviour
     public GameObject bulletPrefab;
     public SpecialAbility specialAbility;
     public int electricBounces;
+    public float fightingMultiplier;
 
 
     private float attackCooldown = 2f;
@@ -57,9 +58,13 @@ public class Pet : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // Calculate actual damage considering defense
-        int actualDamage = Mathf.Max(0, damage - defense);
+        float actualDamage = Mathf.Max(0, damage - defense);
         CheckPushback();
-        currentHealth -= actualDamage;
+        if(type1 == PetType.Fighting || type2 == PetType.Fighting)
+        {
+            actualDamage = actualDamage - (actualDamage * fightingMultiplier);
+        }
+        currentHealth -= (int)actualDamage;
         Debug.Log(damage + " damage taken.  New health: " + currentHealth);
         SteelSynergyCheck();
 
@@ -214,6 +219,18 @@ public class Pet : MonoBehaviour
     {
         fireMultiplier = multiplier;
         Debug.Log("Updating fire multiplier.  New value: " + fireMultiplier);
+    }
+
+    public void ResetFightingMultiplier()
+    {
+        fightingMultiplier = 0;
+        Debug.Log("Updating fighting multiplier.  New value: " + fightingMultiplier);
+    }
+
+    public void UpdateFightingMultipler(float multiplier)
+    {
+        fightingMultiplier = multiplier;
+        Debug.Log("Updating fighting multiplier.  New value: " + fightingMultiplier);
     }
 
     private void SteelSynergyCheck()
