@@ -15,7 +15,7 @@ public class TestDamage : MonoBehaviour
             // If the enemy has a health component, deal damage to it
             if (enemyHealth != null)
             {
-                enemyHealth.TakeDamage(damageAmount);
+                enemyHealth.TakeDamage(damageAmount * (damageAmount + GetComponent<Pet>().fightingMultiplier));
             }
 
             // Get the pet component

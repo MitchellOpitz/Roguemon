@@ -16,6 +16,9 @@ public class Pet : MonoBehaviour
     public float baseManaGainPerAttack;
     public GameObject bulletPrefab;
     public SpecialAbility specialAbility;
+    public int electricBounces;
+    public float fightingMultiplier;
+    public float poisonDamage;
 
 
     private float attackCooldown = 2f;
@@ -25,6 +28,7 @@ public class Pet : MonoBehaviour
     private float manaGainPerAttack;
     private int currentMaxHealth;
     private bool isInvulnerable;
+    private float fireMultiplier;
 
     private void Start()
     {
@@ -59,9 +63,13 @@ public class Pet : MonoBehaviour
     public void TakeDamage(int damage)
     {
         // Calculate actual damage considering defense
-        int actualDamage = Mathf.Max(0, damage - defense);
+        float actualDamage = Mathf.Max(0, damage - defense);
         CheckPushback();
-        currentHealth -= actualDamage;
+        if(type1 == PetType.Fighting || type2 == PetType.Fighting)
+        {
+            actualDamage = actualDamage - (actualDamage * fightingMultiplier);
+        }
+        currentHealth -= (int)actualDamage;
         Debug.Log(damage + " damage taken.  New health: " + currentHealth);
         SteelSynergyCheck();
 
@@ -79,11 +87,26 @@ public class Pet : MonoBehaviour
         {
             GameObject bullet = Instantiate(bulletPrefab, transform.position, Quaternion.identity);
             Bullet bulletComponent = bullet.GetComponent<Bullet>();
+            if ((type1 == PetType.Fire || type2 == PetType.Fire) && fireMultiplier > 0)
+            {
+                Debug.Log("Fire type detected.  Applying burn effect.");
+                bulletComponent.AddBurnEffect(fireMultiplier);
+            }
             _animator.SetTrigger("creatureAttack");
 
             if (bulletComponent != null)
             {
                 bulletComponent.SetTarget(target.transform);
+            }
+            if ((type1 == PetType.Electric || type2 == PetType.Electric))
+            {
+                bulletComponent.electricBounces = electricBounces;
+                bulletComponent.isElectric = true;
+            }
+            if ((type1 == PetType.Poison || type2 == PetType.Poison) && poisonDamage > 0)
+            {
+                Debug.Log("Poison type detected.  Applying Poison effect.");
+                bulletComponent.AddPoisonEffect(poisonDamage);
             }
 
             GainMana(manaGainPerAttack);
@@ -204,6 +227,42 @@ public class Pet : MonoBehaviour
     {
         currentMaxHealth = (int)(baseMaxHealth * (1 + multiplier));
         // Debug.Log("Updating max health.  New value: " + currentMaxHealth);
+    }
+
+    public void ResetFireMultiplier()
+    {
+        fireMultiplier = 0;
+        Debug.Log("Updating fire multiplier.  New value: " + fireMultiplier);
+    }
+
+    public void UpdateFireMultipler(float multiplier)
+    {
+        fireMultiplier = multiplier;
+        Debug.Log("Updating fire multiplier.  New value: " + fireMultiplier);
+    }
+
+    public void ResetFightingMultiplier()
+    {
+        fightingMultiplier = 0;
+        Debug.Log("Updating fighting multiplier.  New value: " + fightingMultiplier);
+    }
+
+    public void UpdateFightingMultipler(float multiplier)
+    {
+        fightingMultiplier = multiplier;
+        Debug.Log("Updating fighting multiplier.  New value: " + fightingMultiplier);
+    }
+
+    public void ResetPoisonDamage()
+    {
+        poisonDamage = 0;
+        Debug.Log("Updating poison damage.  New value: " + poisonDamage);
+    }
+
+    public void UpdatePoisonDamage(float multiplier)
+    {
+        poisonDamage = multiplier;
+        Debug.Log("Updating poison damage.  New value: " + poisonDamage);
     }
 
     private void SteelSynergyCheck()

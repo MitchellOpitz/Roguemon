@@ -15,6 +15,17 @@ public class ElectricSynergy : Synergy
 
         // Implement your logic for causing attacks to bounce to additional enemies
         // For example, you could modify the attack behavior of pets to target additional enemies when they attack
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            Pet pet_ = pet.GetComponent<Pet>();
+            if (pet_.type1 == PetType.Electric || pet_.type2 == PetType.Electric)
+            {
+                Debug.Log("Updating " + pet_.name + "'s electric bounces.");
+                pet_.electricBounces = additionalBounces;
+            }
+        }
     }
 
     private int GetAdditionalBounces(int requiredCount)

@@ -211,6 +211,12 @@ public class SynergyManager : MonoBehaviour
 
             // Ghost
             pet.GetComponent<DetectNearbyEnemies>().ResetPushbackChance();
+
+            // Fighting
+            pet.GetComponent<Pet>().ResetFightingMultiplier();
+
+            // Poison
+            pet.GetComponent<Pet>().ResetPoisonDamage();
         }
     }
 }

@@ -15,6 +15,13 @@ public class PoisonSynergy : Synergy
 
         // Implement your logic to increase the damage over time (DoT) damage of allies
         // For example, you could modify the DoT damage applied to enemies to increase the damage by dotDamageMultiplier
+
+        PartyManager partyManager = GameObject.FindAnyObjectByType<PartyManager>();
+        foreach (GameObject pet in partyManager.party)
+        {
+            Pet pet_ = pet.GetComponent<Pet>();
+            pet_.poisonDamage = requiredCount;
+        }
     }
 
     private float GetDotDamageMultiplier(int requiredCount)

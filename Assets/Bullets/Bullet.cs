@@ -4,6 +4,13 @@ public class Bullet : MonoBehaviour
 {
     public float speed = 10f;   // Speed of the bullet
     public float damage = 10f;  // Damage dealt to the target
+    public bool isFlaming;
+    public float fireMultiplier;
+    public bool isPoison;
+    public float poisonDamage;
+    public bool isElectric;
+    public float electricBounces;
+    public Enemy electricOriginalTarget = null;
 
     private Transform target;   // The target to hit
 
@@ -50,9 +57,64 @@ public class Bullet : MonoBehaviour
     {
         // Handle damage to the target enemy
         Enemy enemy = target.GetComponent<Enemy>();
-        if (enemy != null)
+        if (enemy != null && enemy != electricOriginalTarget)
         {
             enemy.TakeDamage(damage);
+
+            if (isFlaming)
+            {
+                enemy.ApplyBurnEffect(damage, fireMultiplier);
+            }
+
+            if (isPoison)
+            {
+                enemy.ApplyPoisonEffect(damage, poisonDamage);
+            }
+
+            if (isElectric)
+            {
+                // Create a new projectile
+                Bullet bullet = Instantiate(this, target.position, target.rotation);
+
+                // Find all enemies in the scene with the "Enemy" tag
+                GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+                if (enemies.Length > 0)
+                {
+                    // Find the nearest enemy
+                    GameObject nearestEnemy = null;
+                    float closestDistance = Mathf.Infinity;
+
+                    // Find the second closest enemy
+                    GameObject secondClosestEnemy = null;
+                    float secondClosestDistance = Mathf.Infinity;
+
+                    foreach (GameObject newEnemy in enemies)
+                    {
+                        float distanceToEnemy = Vector3.Distance(transform.position, newEnemy.transform.position);
+
+                        if (distanceToEnemy < closestDistance)
+                        {
+                            secondClosestDistance = closestDistance;
+                            secondClosestEnemy = nearestEnemy;
+
+                            closestDistance = distanceToEnemy;
+                            nearestEnemy = newEnemy;
+                        }
+                        else if (distanceToEnemy < secondClosestDistance)
+                        {
+                            secondClosestDistance = distanceToEnemy;
+                            secondClosestEnemy = newEnemy;
+                        }
+                    }
+
+                    bullet.electricOriginalTarget = enemy;
+                    bullet.electricBounces = electricBounces - 1;
+                    bullet.target = secondClosestEnemy.transform;
+                }
+
+            }
+
         }
 
         Destroy(gameObject); // Destroy the bullet
@@ -82,5 +144,19 @@ public class Bullet : MonoBehaviour
 
             target = nearestEnemy.transform;
         }
+    }
+
+    public void AddBurnEffect(float multiplier)
+    {
+        Debug.Log("Burn effect added to bullet.");
+        isFlaming = true;
+        fireMultiplier = multiplier;
+    }
+
+    public void AddPoisonEffect(float multiplier)
+    {
+        Debug.Log("Poison effect added to bullet.");
+        isPoison = true;
+        poisonDamage = multiplier;
     }
 }
