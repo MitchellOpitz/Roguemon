@@ -20,11 +20,10 @@ public class Pet : MonoBehaviour
     public float fightingMultiplier;
     public float poisonDamage;
 
-
     private float attackCooldown = 2f;
     private float timeSinceLastAttack = 0f;
     private PartyManager partyManager;
-    private Animator _animator;
+    public Animator _animator;
     private float manaGainPerAttack;
     private int currentMaxHealth;
     private bool isInvulnerable;
@@ -141,7 +140,7 @@ public class Pet : MonoBehaviour
 
     }
 
-    private GameObject FindClosestEnemy()
+    public GameObject FindClosestEnemy()
     {
         // Find the closest enemy within the scene
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
