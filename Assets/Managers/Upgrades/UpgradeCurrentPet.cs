@@ -18,8 +18,8 @@ public class UpgradeCurrentPet : Upgrade
         pet = partyManager.party[randomPetIndex].GetComponent<Pet>();
 
         // Set upgrade name and description based on the chosen pet and upgrade type
-        upgradeName = pet.name + " " + statToUpgrade.ToString() + " +" + amount;
-        description = "Increase the " + statToUpgrade.ToString() + " of " + pet.name + " by " + amount + ".";
+        upgradeName = pet.name.Replace("(Clone)","") + " " + statToUpgrade.ToString() + " +" + amount;
+        description = "Increase the " + statToUpgrade.ToString() + " of " + pet.name.Replace("(Clone)", "") + " by " + amount + ".";
 
         return this;
     }

@@ -52,6 +52,8 @@ public class PartyManager : MonoBehaviour
             // Instantiate the new pet behind the last party member
             GameObject newPet = Instantiate(pet, spawnPosition, Quaternion.identity);
             newPet.transform.forward = transform.forward;
+            newPet.name = newPet.name.Replace("(Clone)", "");
+
 
             // Add the new pet to the party list
             party.Add(newPet);
