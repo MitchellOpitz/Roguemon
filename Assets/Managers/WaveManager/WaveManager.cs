@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class WaveManager : MonoBehaviour
 {
@@ -7,6 +8,7 @@ public class WaveManager : MonoBehaviour
     public float timeBetweenWaves = 10f;        // Time between waves in seconds
     public UpgradesUI upgradesUI;               // Reference to the upgrades UI
     public int totalWaves = 25;                 // Total number of waves
+    public TextMeshProUGUI waveText;
 
     public WaveConfiguration[] waves;           // Array to store wave configurations
 
@@ -17,6 +19,7 @@ public class WaveManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(StartWaveSequence());
+        UpdateWaveText();
     }
 
     // Coroutine to manage the sequence of waves
@@ -37,6 +40,7 @@ public class WaveManager : MonoBehaviour
 
             // Resume the game
             Time.timeScale = 1;
+            UpdateWaveText();
 
             isWaveActive = true;
             StartCoroutine(SpawnWaveEnemies(currentWave));
@@ -54,6 +58,13 @@ public class WaveManager : MonoBehaviour
 
         Debug.Log("All waves cleared!");
         SceneManagement.instance.LoadSceneByName("Title");
+    }
+
+    private void UpdateWaveText()
+    {
+        string text = "Wave " + (currentWave + 1) + " of " + totalWaves;
+
+        waveText.text = text;
     }
 
     // Coroutine to spawn enemies for a wave
