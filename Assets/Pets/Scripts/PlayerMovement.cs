@@ -23,8 +23,17 @@ public class PlayerMovement : MonoBehaviour
         float horizontalInput = Input.GetAxis("Horizontal");
         float verticalInput = Input.GetAxis("Vertical");
 
-        // Calculate movement vector based on input and speed
-        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput) * currentMoveSpeed * Time.deltaTime;
+        // Calculate movement vector based on input
+        Vector3 movement = new Vector3(horizontalInput, 0f, verticalInput);
+
+        // Normalize the movement vector if it's not zero
+        if (movement != Vector3.zero)
+        {
+            movement.Normalize();
+        }
+
+        // Apply speed to the normalized movement vector
+        movement *= currentMoveSpeed * Time.deltaTime;
 
         // Calculate the new position after applying movement
         Vector3 newPosition = rb.position + movement;
@@ -43,10 +52,12 @@ public class PlayerMovement : MonoBehaviour
             Quaternion targetRotation = Quaternion.LookRotation(movement);
             rb.MoveRotation(targetRotation);
         }
-        else {
+        else
+        {
             _animator.SetBool("isWalking", false);
         }
     }
+
 
     public void ResetSpeed()
     {
