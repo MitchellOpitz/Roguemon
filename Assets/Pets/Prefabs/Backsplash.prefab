@@ -152,7 +152,7 @@ MonoBehaviour:
   maxMana: 50
   currentMana: 0
   baseManaGainPerAttack: 0
-  bulletPrefab: {fileID: 5364989974890306649, guid: 74c815e04ff6e854c85c6b5cbc793783, type: 3}
+  bulletPrefab: {fileID: 9183752682904073780, guid: 87dee1e5fc777994aa48e7119f1bf95d, type: 3}
   specialAbility: {fileID: 0}
   electricBounces: 0
   fightingMultiplier: 0
