@@ -45,16 +45,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sounds:
-  - name: TestMusic
-    clip: {fileID: 8300000, guid: 1e20392344157484191bc906c842f780, type: 3}
-    volume: 1
+  - name: TitleMusic
+    clip: {fileID: 8300000, guid: 312c76591c1027b4fbcaf3e4500c14d7, type: 3}
+    volume: 0.4
     pitch: 1
     loop: 1
     source: {fileID: 0}
-  - name: TestSFX
-    clip: {fileID: 8300000, guid: d07fc52338a496b4a84f1e495c615d2e, type: 3}
-    volume: 1
-    pitch: 1
-    loop: 0
-    source: {fileID: 0}
-  testAudio: 1
+  playFirstTrack: 1
