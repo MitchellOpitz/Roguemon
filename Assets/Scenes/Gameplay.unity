@@ -3367,8 +3367,52 @@ PrefabInstance:
       value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[0].description
+      value: -Water-                 Above average damage and increases your teams
+        crit rate.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[1].description
+      value: -Ice-Fighting-      Above average defense and slows nearby enemies.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[2].description
+      value: -Fairy-Fighting-    Much tankier than normal and causes temporary healing
+        circles to spawn.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[3].description
+      value: -Fire-Fighting-        Burns enemies and gives additional damage resistance
+        to your team
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[4].description
+      value: -Lightning-                High damage, chaining attack.  Lower than
+        average defense and health.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[5].description
+      value: -Steel-Wind-  Increases teams movement speed and resists damage on low
+        health.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[6].description
+      value: -Poison-Ghost-      Has a chance to teleport enemies away when he would
+        be hit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[7].description
+      value: -Ghost-Psychic-     Has a chance to teleport enemies away when he would
+        be hit.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
+      propertyPath: newPetUpgrades.Array.data[8].description
+      value: -Ice-                    Slows nearly enemies and has above average
+        health and defense.
+      objectReference: {fileID: 0}
+    - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[9].description
-      value: This is a test description for Solslush
+      value: -Ice-Water-     Slows nearby enemies and increased allies crit rate.
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[9].upgradeName
@@ -3376,7 +3420,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[10].description
-      value: This is a test description for Spiritsieve
+      value: -Ground-Poison-                    Very support focused.  Increases
+        health and DoT damage of allies.
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[10].upgradeName
@@ -3384,7 +3429,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[11].description
-      value: This is a test description for Steelmelt.
+      value: -Fire-Steel-            Attacks cause burn and reists damage on low
+        health.
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[11].upgradeName
@@ -3392,7 +3438,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[12].description
-      value: This is a test description for Voltephant
+      value: -Ground-Lightning-                        Has chaining attacks and boosts
+        entire team's defense.
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[12].upgradeName
@@ -3400,7 +3447,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[13].description
-      value: This is a test description for Yaypalmer
+      value: -Fire-Poison-                               Leaves enemies burning on
+        hit.
       objectReference: {fileID: 0}
     - target: {fileID: 1047027153148792928, guid: 86798acaa6ce9ea4fa1242a0f4b7fc79, type: 3}
       propertyPath: newPetUpgrades.Array.data[13].upgradeName
