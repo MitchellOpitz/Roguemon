@@ -145,7 +145,7 @@ MonoBehaviour:
   type1: 6
   type2: 9
   petClass: 0
-  baseMaxHealth: 0
+  baseMaxHealth: 100
   currentHealth: 0
   defense: 1
   attack: 3
@@ -153,6 +153,11 @@ MonoBehaviour:
   currentMana: 0
   baseManaGainPerAttack: 0
   bulletPrefab: {fileID: 5364989974890306649, guid: 74c815e04ff6e854c85c6b5cbc793783, type: 3}
+  specialAbility: {fileID: 0}
+  electricBounces: 0
+  fightingMultiplier: 0
+  poisonDamage: 0
+  _animator: {fileID: 0}
 --- !u!114 &-5637247491535475084
 MonoBehaviour:
   m_ObjectHideFlags: 0

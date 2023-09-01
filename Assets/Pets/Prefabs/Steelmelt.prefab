@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 6789216165684021130}
   - component: {fileID: 3775586099080219343}
   - component: {fileID: 113271757686667391}
+  - component: {fileID: 7320582613851673535}
   m_Layer: 0
   m_Name: Steelmelt
   m_TagString: Player
@@ -100,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9cc3ff2385dcc243b80567046553337, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  baseMoveSpeed: 5
 --- !u!114 &6789216165684021130
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,14 +145,35 @@ MonoBehaviour:
   type1: 11
   type2: 2
   petClass: 0
-  maxHealth: 100
+  baseMaxHealth: 100
   currentHealth: 0
   defense: 1
-  attack: 3
+  attack: 5
   maxMana: 50
   currentMana: 0
-  manaGainPerAttack: 10
+  baseManaGainPerAttack: 0
   bulletPrefab: {fileID: 5364989974890306649, guid: 74c815e04ff6e854c85c6b5cbc793783, type: 3}
+  specialAbility: {fileID: 0}
+  electricBounces: 0
+  fightingMultiplier: 0
+  poisonDamage: 0
+  _animator: {fileID: 0}
+--- !u!114 &7320582613851673535
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1660904619282021544}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e8dd6b757eb32f44b8584fc7b75e632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  detectionRadius: 5
 --- !u!1001 &1232238507273154794
 PrefabInstance:
   m_ObjectHideFlags: 0
